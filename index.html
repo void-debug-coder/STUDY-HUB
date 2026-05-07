@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOID STUDY HUB | Structures I</title>
     
-    <!-- VOID Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0f'/><text y='70' x='50' text-anchor='middle' font-size='60' font-family='Space Grotesk' font-weight='700' fill='%230f0'>V</text></svg>">
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -134,17 +133,17 @@
             border: 1px solid #2a2a3e;
             padding: 15px;
             border-radius: 8px;
-            font-size: 13px;
-            line-height: 1.7;
-            color: #ccc;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ddd;
             max-height: 500px;
             overflow-y: auto;
      }
-   .note-content h3 { color: #0f0; margin: 18px 0 8px 0; font-size: 15px; }
+   .note-content h3 { color: #0f0; margin: 18px 0 8px 0; font-size: 16px; }
    .note-content h3:first-child { margin-top: 0; }
-   .note-content h4 { color: #0f0; margin: 12px 0 6px 0; font-size: 13px; }
-   .note-content ul { margin-left: 18px; margin-bottom: 10px; }
-   .note-content li { margin-bottom: 6px; }
+   .note-content h4 { color: #0f0; margin: 12px 0 6px 0; font-size: 14px; }
+   .note-content ul { margin-left: 18px; margin-bottom: 12px; }
+   .note-content li { margin-bottom: 8px; }
    .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
@@ -160,6 +159,28 @@
             width: 100%;
             height: 100%;
             border: 0;
+   }
+   .simple-box {
+            background: #1a1a2a;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            border: 1px solid #2a2a3e;
+   }
+   .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #2a2a3e;
+            color: #666;
+            font-size: 12px;
+   }
+   .footer .void-tag {
+            color: #0f0;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: 8px;
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
    }
         @media (max-width: 600px) {
        .grid { grid-template-columns: 1fr; }
@@ -187,144 +208,133 @@
             <div class="card">
                 <h2>📊 Today</h2>
                 <p>Sessions: <span id="sessions">0</span></p>
-                <p style="margin: 10px 0;">Topics Done: <span id="topicsDone">0</span>/8</p>
+                <p style="margin: 10px 0;">Topics Done: <span id="topicsDone">0</span>/6</p>
                 <button class="btn btn-small" onclick="downloadPDF()">📄 Download Notes PDF</button>
             </div>
 
-            <!-- COMPREHENSIVE MODULE 1 NOTES -->
+            <!-- SIMPLE MODULE 1 NOTES -->
             <div class="card full">
-                <h2>🏗️ Module 1: Complete Notes</h2>
+                <h2>📖 Module 1: Simple Notes</h2>
                 <div class="note-content" id="lectureNotes">
-                    <h3>1. Introduction to Strength of Materials</h3>
-                    <h4>Rigid vs Deformable Bodies</h4>
+                    <h3>1. What is Strength of Materials?</h3>
+                    <div class="simple-box">
+                        <strong>Simple:</strong> It studies how materials behave when you push, pull, or twist them. 
+                        <br><br>
+                        <strong>Why?</strong> So buildings and bridges don't break.
+                    </div>
                     <ul>
-                        <li><strong>Rigid Body:</strong> No deformation under load. Used in Statics.</li>
-                        <li><strong>Deformable Body:</strong> Changes shape/size under load. Real materials deform first, then fail.</li>
-                    </ul>
-                    <h4>Key Properties</h4>
-                    <ul>
-                        <li><strong>Strength:</strong> Ability to resist failure under external force</li>
-                        <li><strong>Stiffness:</strong> Ability to resist deformation</li>
-                        <li><strong>Stability:</strong> Ability to maintain equilibrium</li>
-                    </ul>
-                    <h4>Material Assumptions</h4>
-                    <ul>
-                        <li><strong>Homogeneous:</strong> Same properties throughout</li>
-                        <li><strong>Isotropic:</strong> Same properties in all directions</li>
-                        <li><strong>Continuous:</strong> No voids or cracks</li>
+                        <li><strong>Strength:</strong> How much force before it breaks</li>
+                        <li><strong>Stiffness:</strong> How much it bends/stretches</li>
                     </ul>
 
-                    <h3>2. Simple Stress & Strain</h3>
-                    <h4>Normal Stress σ = P/A</h4>
+                    <h3>2. Stress = Force ÷ Area</h3>
+                    <div class="simple-box">
+                        <strong>Formula:</strong> σ = F / A
+                        <br>
+                        <strong>Units:</strong> N/mm² = MPa
+                    </div>
+                    <h4>Two Types:</h4>
                     <ul>
-                        <li>Force per unit area ⊥ to cross-section</li>
-                        <li><strong>Tensile:</strong> +ve, pulls material apart</li>
-                        <li><strong>Compressive:</strong> -ve, pushes material together</li>
-                        <li>Units: N/mm² = MPa, N/m² = Pa</li>
+                        <li><strong>Tensile Stress:</strong> Pulling apart. Like stretching a rubber band. +ve</li>
+                        <li><strong>Compressive Stress:</strong> Pushing together. Like squashing a can. -ve</li>
+                        <li><strong>Shear Stress:</strong> Sliding force. Like scissors cutting paper. τ = V / A</li>
                     </ul>
-                    <h4>Shear Stress τ = V/A</h4>
+                    <div class="simple-box">
+                        <strong>Example:</strong> 1000N force on 100mm² area → Stress = 1000/100 = 10 MPa
+                    </div>
+
+                    <h3>3. Strain = How Much It Stretches</h3>
+                    <div class="simple-box">
+                        <strong>Formula:</strong> ε = Change in Length / Original Length = ΔL / L
+                        <br>
+                        <strong>Units:</strong> No units. Just a number.
+                    </div>
                     <ul>
-                        <li>Force per unit area || to cross-section</li>
-                        <li>Causes sliding of layers</li>
-                        <li>Single shear: τ = P/A, Double shear: τ = P/2A</li>
-                    </ul>
-                    <h4>Normal Strain ε = ΔL/L</h4>
-                    <ul>
-                        <li>Ratio of change in length to original length</li>
-                        <li>Dimensionless, often given as % or μ-strain</li>
-                        <li><strong>Tensile strain:</strong> +ve elongation</li>
-                        <li><strong>Compressive strain:</strong> -ve shortening</li>
+                        <li>If a 1000mm bar stretches by 2mm → Strain = 2/1000 = 0.002</li>
+                        <li><strong>Tensile strain:</strong> Gets longer, +ve</li>
+                        <li><strong>Compressive strain:</strong> Gets shorter, -ve</li>
                     </ul>
 
-                    <h3>3. Hooke's Law & Elastic Constants</h3>
-                    <h4>Hooke's Law: σ = Eε</h4>
+                    <h3>4. Hooke's Law: Stress ∝ Strain</h3>
+                    <div class="simple-box">
+                        <strong>Formula:</strong> σ = E × ε
+                        <br>
+                        <strong>E = Young's Modulus</strong> - shows how stiff material is
+                    </div>
                     <ul>
-                        <li>Valid within elastic limit: stress ∝ strain</li>
-                        <li><strong>E = Young's Modulus:</strong> Modulus of elasticity</li>
-                        <li>Steel: E ≈ 200 GPa, Concrete: E ≈ 25 GPa, Aluminum: E ≈ 70 GPa</li>
-                    </ul>
-                    <h4>Stress-Strain Curve for Mild Steel</h4>
-                    <ul>
-                        <li><strong>Proportional Limit:</strong> End of linear region</li>
-                        <li><strong>Elastic Limit:</strong> No permanent deformation if unloaded</li>
-                        <li><strong>Yield Point:</strong> ~250 MPa, strain ~0.125%. Large deformation begins</li>
-                        <li><strong>Ultimate Strength:</strong> ~400 MPa, maximum stress</li>
-                        <li><strong>Rupture:</strong> Failure, strain ~20-25%</li>
-                    </ul>
-                    <h4>Poisson's Ratio μ = -Lateral Strain / Axial Strain</h4>
-                    <ul>
-                        <li>Ratio of lateral contraction to axial elongation</li>
-                        <li>Steel: μ ≈ 0.3, Concrete: μ ≈ 0.2, Rubber: μ ≈ 0.5</li>
-                        <li>0 ≤ μ ≤ 0.5 for engineering materials</li>
-                    </ul>
-                    <h4>Shear Modulus G = τ/γ</h4>
-                    <ul>
-                        <li>Modulus of rigidity, relates shear stress to shear strain</li>
-                        <li>G = E / 2(1+μ)</li>
-                    </ul>
-                    <h4>Bulk Modulus K = Volumetric Stress / Volumetric Strain</h4>
-                    <ul>
-                        <li>Resistance to uniform compression</li>
-                        <li>K = E / 3(1-2μ)</li>
-                    </ul>
-                    <h4>Relation Between E, G, K, μ</h4>
-                    <div class="formula">E = 2G(1+μ) = 3K(1-2μ)</div>
-                    <div class="formula">E = 9KG / (3K+G)</div>
-
-                    <h3>4. Axial Deformation</h3>
-                    <h4>Deformation of Prismatic Bar: δ = PL/AE</h4>
-                    <ul>
-                        <li>P = Axial load, L = Length, A = Area, E = Young's modulus</li>
-                        <li>For stepped bars: δ_total = Σ(PL/AE) for each segment</li>
-                    </ul>
-                    <h4>Thermal Stress: σ = EαΔT</h4>
-                    <ul>
-                        <li>α = Coefficient of thermal expansion per °C</li>
-                        <li>If free to expand: δ_T = αLΔT, no stress</li>
-                        <li>If restrained: Stress develops. Expansion restrained → compression</li>
+                        <li><strong>Steel:</strong> E = 200,000 MPa - very stiff</li>
+                        <li><strong>Aluminum:</strong> E = 70,000 MPa - less stiff</li>
+                        <li><strong>Rubber:</strong> E = 10 MPa - very flexible</li>
+                        <li><strong>Bigger E = Harder to stretch</strong></li>
                     </ul>
 
-                    <h3>5. Equilibrium & Support Reactions</h3>
-                    <h4>Conditions of Equilibrium</h4>
+                    <h3>5. How Much Does It Stretch? δ = FL/AE</h3>
+                    <div class="simple-box">
+                        <strong>Formula:</strong> Deformation δ = Force × Length / Area × E
+                        <br><br>
+                        <strong>Meaning:</strong> More force = more stretch. Longer bar = more stretch. 
+                        <br>Bigger area or stiffer material = less stretch.
+                    </div>
+                    <div class="simple-box">
+                        <strong>Example:</strong> Steel bar, F=10,000N, L=2000mm, A=100mm², E=200,000MPa
+                        <br>δ = 10,000×2000 / 100×200,000 = 1mm stretch
+                    </div>
+
+                    <h3>6. Poisson's Ratio: Side Squeeze</h3>
+                    <div class="simple-box">
+                        <strong>Simple:</strong> When you pull a material, it gets thinner on the sides.
+                        <br>
+                        <strong>μ = Side strain / Pulling strain</strong>
+                    </div>
                     <ul>
-                        <li>ΣF_x = 0, ΣF_y = 0, ΣM = 0</li>
-                        <li>Free Body Diagram: Isolate body, show ALL external forces + reactions</li>
-                    </ul>
-                    <h4>Types of Supports</h4>
-                    <ul>
-                        <li><strong>Roller:</strong> 1 reaction ⊥ to surface</li>
-                        <li><strong>Pin/Hinge:</strong> 2 reactions: R_x, R_y</li>
-                        <li><strong>Fixed:</strong> 3 reactions: R_x, R_y, M</li>
+                        <li><strong>Steel:</strong> μ = 0.3</li>
+                        <li><strong>Concrete:</strong> μ = 0.2</li>
+                        <li>If μ = 0.3 and you stretch 0.001, sides shrink by 0.0003</li>
                     </ul>
 
-                    <h3>6. Biaxial Stress & Principal Stresses</h3>
-                    <h4>Stress on Inclined Plane</h4>
-                    <div class="formula">σ_n = (σ_x + σ_y)/2 + (σ_x - σ_y)/2 × cos2θ + τ_xy × sin2θ</div>
-                    <div class="formula">τ_n = -(σ_x - σ_y)/2 × sin2θ + τ_xy × cos2θ</div>
-                    <h4>Principal Stresses</h4>
+                    <h3>7. Temperature Changes Cause Stress Too</h3>
+                    <div class="simple-box">
+                        <strong>If free to expand:</strong> δ = α × L × ΔT. No stress.
+                        <br>
+                        <strong>If blocked:</strong> Stress = E × α × ΔT
+                        <br>
+                        <strong>α:</strong> How much it expands per °C. Steel α = 12×10⁻⁶
+                    </div>
+                    <div class="simple-box">
+                        <strong>Example:</strong> Steel blocked, heated 50°C → Stress = 200,000 × 12×10⁻⁶ × 50 = 120 MPa compression
+                    </div>
+
+                    <h3>8. Supports & Equilibrium</h3>
+                    <h4>To stay still, forces must balance:</h4>
                     <ul>
-                        <li>Planes where shear stress = 0</li>
-                        <li>σ_1,2 = (σ_x + σ_y)/2 ± √[((σ_x - σ_y)/2)² + τ_xy²]</li>
-                        <li>Max shear: τ_max = (σ_1 - σ_2)/2</li>
+                        <li><strong>ΣF_x = 0:</strong> Left-right forces balance</li>
+                        <li><strong>ΣF_y = 0:</strong> Up-down forces balance</li>
+                        <li><strong>ΣM = 0:</strong> No spinning</li>
+                    </ul>
+                    <h4>Support Types:</h4>
+                    <ul>
+                        <li><strong>Roller:</strong> 1 force, up/down only</li>
+                        <li><strong>Pin:</strong> 2 forces, up/down + left/right</li>
+                        <li><strong>Fixed:</strong> 3 reactions, up/down + left/right + moment</li>
                     </ul>
 
-                    <h3>7. Key Assumptions for Module 1</h3>
-                    <ul>
-                        <li>Loads applied through centroid to avoid bending</li>
-                        <li>Cross-section remains plane after deformation</li>
-                        <li>Material obeys Hooke's Law</li>
-                        <li>Deformations are small</li>
-                    </ul>
+                    <h3>9. Key Numbers to Remember</h3>
+                    <div class="simple-box">
+                        <strong>Steel:</strong> E = 200 GPa, μ = 0.3, Yield = 250 MPa
+                        <br>
+                        <strong>Concrete:</strong> E = 25 GPa, μ = 0.2
+                        <br>
+                        <strong>Aluminum:</strong> E = 70 GPa, μ = 0.33
+                    </div>
                 </div>
             </div>
 
-            <!-- Embedded YouTube - FIXED -->
+            <!-- Embedded YouTube -->
             <div class="card full">
-                <h2>▶️ Watch: Stress & Strain Explained</h2>
+                <h2>▶️ Watch: Stress & Strain Made Simple</h2>
                 <div style="display:flex;gap:8px;margin-bottom:10px;">
                     <button class="btn btn-small" onclick="switchVideo('EN4Zz0GLZpA')">Efficient Engineer</button>
                     <button class="btn btn-small" onclick="switchVideo('aQf6Q8t1FQE')">Jeff Hanson</button>
-                    <button class="btn btn-small" onclick="switchVideo('p9qpU8MXsBM')">NPTEL IIT</button>
                 </div>
                 <div class="video-wrapper">
                     <iframe id="ytPlayer" src="https://www.youtube.com/embed/EN4Zz0GLZpA" allowfullscreen></iframe>
@@ -332,80 +342,74 @@
                 <p style="font-size:12px;color:#999;margin-top:8px;" id="videoCredit">The Efficient Engineer - Understanding Stress</p>
             </div>
 
-            <!-- Stress & Strain Calculator -->
+            <!-- Simple Calculator -->
             <div class="card full">
-                <h2>📐 Stress & Strain Calculator</h2>
+                <h2>📐 Easy Calculator</h2>
                 <div class="input-group">
-                    <label>Force (N)</label>
+                    <label>Force (N) - How hard you pull/push</label>
                     <input type="number" class="input" id="force" placeholder="e.g. 5000">
                 </div>
                 <div class="input-group">
-                    <label>Area (mm²)</label>
+                    <label>Area (mm²) - Cross-section size</label>
                     <input type="number" class="input" id="area" placeholder="e.g. 100">
                 </div>
                 <div class="input-group">
-                    <label>Original Length (mm)</label>
+                    <label>Length (mm) - Original length</label>
                     <input type="number" class="input" id="length" placeholder="e.g. 2000">
                 </div>
                 <div class="input-group">
-                    <label>Extension (mm)</label>
-                    <input type="number" class="input" id="extension" placeholder="e.g. 2">
-                </div>
-                <div class="input-group">
-                    <label>Young's Modulus E (GPa)</label>
-                    <input type="number" class="input" id="modulus" placeholder="e.g. 200 for steel">
+                    <label>E (GPa) - Stiffness: Steel=200, Aluminum=70</label>
+                    <input type="number" class="input" id="modulus" placeholder="e.g. 200">
                 </div>
                 <button class="btn" onclick="calcStressStrain()">Calculate</button>
                 <div id="stressResult"></div>
             </div>
 
-            <!-- Key Formulas -->
+            <!-- Key Formulas - Simple -->
             <div class="card full">
-                <h2>📐 Key Formulas - Module 1</h2>
-                <div class="formula">σ = F/A → Normal Stress (MPa)</div>
-                <div class="formula">τ = V/A → Shear Stress (MPa)</div>
-                <div class="formula">ε = ΔL/L → Normal Strain</div>
-                <div class="formula">γ = τ/G → Shear Strain</div>
-                <div class="formula">σ = Eε → Hooke's Law</div>
-                <div class="formula">δ = FL/AE → Axial Deformation</div>
-                <div class="formula">δ_T = αLΔT → Thermal Deformation</div>
-                <div class="formula">μ = -ε_lateral/ε_axial → Poisson's Ratio</div>
-                <div class="formula">E = 2G(1+μ) = 3K(1-2μ) → Elastic Constants</div>
-                <div class="formula">ΣF_x=0, ΣF_y=0, ΣM=0 → Equilibrium</div>
+                <h2>📐 Only 4 Formulas You Need</h2>
+                <div class="formula">1. Stress σ = Force / Area → MPa</div>
+                <div class="formula">2. Strain ε = Stretch / Original Length → no units</div>
+                <div class="formula">3. Hooke's Law: σ = E × ε → relates stress & strain</div>
+                <div class="formula">4. Stretch δ = Force × Length / Area × E → mm</div>
             </div>
 
             <!-- Topics Checklist -->
             <div class="card full">
-                <h2>🏗️ Module 1 Topics Checklist</h2>
+                <h2>✅ Module 1 Checklist</h2>
                 <div id="topicsList"></div>
             </div>
 
-            <!-- Practice Questions -->
+            <!-- Simple Practice Questions -->
             <div class="card full">
-                <h2>📝 Module 1 Practice Questions</h2>
-                <div class="formula">Q1: Define Poisson's Ratio and state typical values for steel</div>
-                <div class="formula">Q2: Derive the relation E = 2G(1+μ)</div>
-                <div class="formula">Q3: A bar L=2m, d=15mm, P=30kN, E=120GPa. Find elongation</div>
-                <div class="formula">Q4: Explain principal planes and principal stresses</div>
-                <div class="formula">Q5: A steel rod is heated 50°C while restrained. E=200GPa, α=12×10⁻⁶/°C. Find thermal stress</div>
+                <h2>📝 Simple Practice Questions</h2>
+                <div class="formula">Q1: Force=1000N, Area=50mm². Find stress.</div>
+                <div class="formula">Q2: Bar 2m long stretches 1mm. Find strain.</div>
+                <div class="formula">Q3: Steel E=200GPa, strain=0.001. Find stress.</div>
+                <div class="formula">Q4: Force=5000N, L=1000mm, A=100mm², E=200GPa. Find stretch.</div>
+                <div class="formula">Q5: What does Young's Modulus tell you?</div>
             </div>
 
             <!-- Resources -->
             <div class="card full">
-                <h2>📚 External Resources</h2>
+                <h2>📚 Simple Resources</h2>
                 <a href="https://nptel.ac.in/courses/105105108" target="_blank" class="resource">
-                    NPTEL Strength of Materials - IIT Lecture PDFs + Videos
+                    NPTEL - IIT Videos: Easy explanations
                 </a>
-                <a href="https://mathalino.com/reviewer/mechanics-and-strength-materials/solution-to-problem-108-normal-stress" target="_blank" class="resource">
-                    Mathalino - Normal Stress Solved Problems
-                </a>
-                <a href="https://mathalino.com/reviewer/mechanics-and-strength-materials/solution-to-problem-264-thermal-stress" target="_blank" class="resource">
-                    Mathalino - Thermal Stress Examples
+                <a href="https://www.youtube.com/@TheEfficientEngineer" target="_blank" class="resource">
+                    The Efficient Engineer - Best simple videos
                 </a>
                 <a href="https://skyciv.com/free-beam-calculator/" target="_blank" class="resource">
-                    SkyCiv Beam Calculator - Free SFD/BMD Tool
+                    SkyCiv - Free Beam Calculator Tool
                 </a>
             </div>
+        </div>
+
+        <!-- FOOTER WITH MR VOID CREDIT -->
+        <div class="footer">
+            <div>Built for engineering students. No fluff, just results.</div>
+            <div class="void-tag">CREATED BY MR VOID</div>
+            <div style="margin-top:5px;font-size:10px;">VOID STUDY HUB © 2026</div>
         </div>
     </div>
 
@@ -454,43 +458,32 @@
             document.getElementById('ytPlayer').src = `https://www.youtube.com/embed/${videoId}`;
             const credits = {
                 'EN4Zz0GLZpA': 'The Efficient Engineer - Understanding Stress',
-                'aQf6Q8t1FQE': 'Jeff Hanson - Mechanics of Materials: Normal Stress', 
-                'p9qpU8MXsBM': 'NPTEL - Introduction to Strength of Materials'
+                'aQf6Q8t1FQE': 'Jeff Hanson - Mechanics of Materials: Normal Stress'
             };
             document.getElementById('videoCredit').textContent = credits[videoId];
         }
 
-        // Stress & Strain Calculator
+        // Simple Calculator
         function calcStressStrain() {
             const F = parseFloat(document.getElementById('force').value);
             const A = parseFloat(document.getElementById('area').value);
             const L = parseFloat(document.getElementById('length').value);
-            const dL = parseFloat(document.getElementById('extension').value);
             const E = parseFloat(document.getElementById('modulus').value);
 
             if (!F ||!A) {
-                document.getElementById('stressResult').innerHTML = '<div class="result">Enter Force and Area minimum 💀</div>';
+                document.getElementById('stressResult').innerHTML = '<div class="result">Enter Force and Area first 💀</div>';
                 return;
             }
 
-            const stress = F / A; // MPa
-            let html = `<div class="result"><strong>σ = ${stress.toFixed(3)} MPa</strong> → Normal Stress</div>`;
+            const stress = F / A;
+            let html = `<div class="result"><strong>Stress = ${stress.toFixed(2)} MPa</strong><br>This is how hard the material is being pulled per mm²</div>`;
 
-            if (L && dL) {
-                const strain = dL / L;
-                html += `<div class="result"><strong>ε = ${strain.toExponential(3)}</strong> → Strain</div>`;
-
-                if (E) {
-                    const E_MPa = E * 1000;
-                    const stressCheck = E_MPa * strain;
-                    html += `<div class="result"><strong>σ = Eε = ${stressCheck.toFixed(3)} MPa</strong> → Hooke's Law check</div>`;
-                }
-            }
-
-            if (L && E && A) {
+            if (L && E) {
                 const E_MPa = E * 1000;
+                const strain = stress / E_MPa;
                 const deformation = (F * L) / (A * E_MPa);
-                html += `<div class="result"><strong>δ = ${deformation.toFixed(4)} mm</strong> → Axial Deformation</div>`;
+                html += `<div class="result"><strong>Strain = ${strain.toExponential(2)}</strong><br>Material stretches this fraction of its length</div>`;
+                html += `<div class="result"><strong>Stretch = ${deformation.toFixed(3)} mm</strong><br>This is how much longer it gets</div>`;
             }
 
             document.getElementById('stressResult').innerHTML = html;
@@ -502,22 +495,20 @@
             const doc = new jsPDF();
             const notes = document.getElementById('lectureNotes').innerText;
             doc.setFontSize(16);
-            doc.text("VOID STUDY HUB - Module 1: Strength of Materials", 20, 20);
-            doc.setFontSize(10);
+            doc.text("VOID STUDY HUB - Module 1: Simple Notes", 20, 20);
+            doc.setFontSize(11);
             doc.text(doc.splitTextToSize(notes, 170), 20, 30);
-            doc.save("VOID_Module1_StrengthOfMaterials.pdf");
+            doc.save("VOID_Module1_SimpleNotes.pdf");
         }
 
-        // Module 1 Topics
+        // Module 1 Topics - Simplified
         const structuresTopics = [
-            "1. Rigid vs Deformable Bodies & Material Properties",
-            "2. Normal Stress, Shear Stress & Strain",
-            "3. Hooke's Law & Young's Modulus E",
-            "4. Poisson's Ratio & Lateral Strain",
-            "5. Shear Modulus G & Bulk Modulus K",
-            "6. Axial & Thermal Deformation", 
-            "7. Equilibrium & Support Reactions",
-            "8. Principal Stresses & Biaxial Stress"
+            "1. What is Stress & Strain",
+            "2. Hooke's Law & Young's Modulus E",
+            "3. How to Calculate Stretch δ = FL/AE",
+            "4. Poisson's Ratio - Side Squeeze",
+            "5. Temperature Stress",
+            "6. Support Reactions & Equilibrium"
         ];
 
         function renderTopics() {
