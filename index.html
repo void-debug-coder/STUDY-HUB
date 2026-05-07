@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Hub | Structures I - Module 1</title>
+    <title>VOID STUDY HUB | Structures I</title>
+    
+    <!-- VOID Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0f'/><text y='70' x='50' text-anchor='middle' font-size='60' font-family='Space Grotesk' font-weight='700' fill='%230f0'>V</text></svg>">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
@@ -18,35 +22,41 @@
             min-height: 100vh;
         }
 
-  .container { max-width: 700px; margin: 0 auto; }
+   .container { max-width: 700px; margin: 0 auto; }
 
-  .header {
+   .header {
             text-align: center;
             margin-bottom: 30px;
-            padding: 20px;
-            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 25px 20px;
+            background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
             border-radius: 16px;
-            border: 1px solid #2a2a3e;
+            border: 1px solid #0f0;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
         }
 
-        h1 { font-size: 24px; margin-bottom: 5px; }
-  .sub { color: #0f0; font-size: 14px; }
+        h1 { 
+            font-size: 28px; 
+            margin-bottom: 5px; 
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        }
+   .sub { color: #0f0; font-size: 13px; font-weight: 700; }
 
-  .grid {
+   .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-bottom: 20px;
         }
 
-  .card {
+   .card {
             background: #11111b;
             border: 1px solid #2a2a3e;
             border-radius: 12px;
             padding: 20px;
         }
 
-  .card h2 {
+   .card h2 {
             font-size: 16px;
             margin-bottom: 15px;
             display: flex;
@@ -54,10 +64,10 @@
             gap: 8px;
         }
 
-  .timer { text-align: center; }
+   .timer { text-align: center; }
         #time { font-size: 48px; font-weight: 700; margin: 15px 0; color: #0f0; }
 
-  .btn {
+   .btn {
             background: #1e1e2e;
             border: 1px solid #3a3a4e;
             color: #fff;
@@ -68,17 +78,17 @@
             font-family: inherit;
             transition: 0.2s;
         }
-  .btn:hover { background: #0f0; color: #000; }
-  .btn-small { padding: 6px 12px; font-size: 12px; }
+   .btn:hover { background: #0f0; color: #000; }
+   .btn-small { padding: 6px 12px; font-size: 12px; }
 
-  .input-group { margin-bottom: 12px; }
-  .input-group label {
+   .input-group { margin-bottom: 12px; }
+   .input-group label {
             display: block;
             font-size: 12px;
             color: #999;
             margin-bottom: 4px;
       }
-  .input {
+   .input {
             width: 100%;
             background: #1e1e2e;
             border: 1px solid #3a3a4e;
@@ -88,7 +98,7 @@
             font-family: inherit;
       }
 
-  .textarea {
+   .textarea {
             width: 100%;
             background: #1e1e2e;
             border: 1px solid #3a3a4e;
@@ -101,7 +111,7 @@
             line-height: 1.5;
       }
 
-  .resource {
+   .resource {
             background: #1a1a2a;
             padding: 12px;
             border-radius: 8px;
@@ -112,11 +122,11 @@
             font-size: 14px;
             transition: 0.2s;
         }
-  .resource:hover { background: #0f0; color: #000; }
+   .resource:hover { background: #0f0; color: #000; }
 
-  .full { grid-column: 1 / -1; }
+   .full { grid-column: 1 / -1; }
 
-  .topic-check {
+   .topic-check {
             display: flex;
             align-items: center;
             gap: 10px;
@@ -127,10 +137,10 @@
             font-size: 14px;
        }
 
-  .topic-check input { accent-color: #0f0; width: 18px; height: 18px; }
-  .topic-check.done { opacity: 0.6; }
+   .topic-check input { accent-color: #0f0; width: 18px; height: 18px; }
+   .topic-check.done { opacity: 0.6; }
 
-  .formula {
+   .formula {
             background: #0d0d15;
             border-left: 3px solid #0f0;
             padding: 12px;
@@ -140,7 +150,7 @@
             font-size: 13px;
        }
 
-  .result {
+   .result {
             background: #0d1f0d;
             border: 1px solid #0f0;
             padding: 12px;
@@ -149,9 +159,9 @@
             font-size: 14px;
       }
 
-  .result strong { color: #0f0; }
+   .result strong { color: #0f0; }
 
-  .note-content {
+   .note-content {
             background: #0d0d15;
             border: 1px solid #2a2a3e;
             padding: 15px;
@@ -163,10 +173,10 @@
             overflow-y: auto;
      }
 
-  .note-content h3 { color: #0f0; margin: 15px 0 8px 0; font-size: 14px; }
-  .note-content h3:first-child { margin-top: 0; }
+   .note-content h3 { color: #0f0; margin: 15px 0 8px 0; font-size: 14px; }
+   .note-content h3:first-child { margin-top: 0; }
 
-  .video-wrapper {
+   .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
@@ -174,7 +184,7 @@
             border-radius: 8px;
             margin-top: 10px;
    }
-  .video-wrapper iframe {
+   .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
@@ -191,8 +201,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Structures I - Module 1 💀</h1>
-            <div class="sub">Simple Stress & Strain | Kisii, KE</div>
+            <h1>VOID STUDY HUB</h1>
+            <div class="sub">Structures I - Module 1 | Strength of Materials</div>
+            <div style="font-size:11px; color:#666; margin-top:8px; letter-spacing:2px;">ENGINEERING • FOCUS • DOMINATE</div>
         </div>
 
         <div class="grid">
@@ -212,34 +223,30 @@
                 <button class="btn btn-small" onclick="downloadPDF()">📄 Download Notes PDF</button>
             </div>
 
-            <!-- Lecture Notes -->
+            <!-- Module 1 Notes -->
             <div class="card full">
-                <h2>📖 Module 1: Stress & Strain - Key Notes</h2>
+                <h2>🏗️ Module 1: Strength of Materials</h2>
                 <div class="note-content" id="lectureNotes">
-                    <h3>1. Introduction & Strength of Material</h3>
-                    The ability of element of the structure to resist its failure under external force is known as 'strength of material' and the ability to resist deformation is 'stiffness'. Materials first deform, then failure takes place.
+                    <h3>1. Introduction</h3>
+                    Rigid bodies vs deformable solids. Stability, strength, stiffness. Concept of homogeneous, isotropic material. Principle of superposition, St. Venant principle
 
-                    <h3>2. Stress (σ) = P/A</h3>
-                    The force of resistance per unit area offered by a body against deformation. Units: N/mm² or MPa. Direct/Normal Stress: Tensile (+ve) or Compressive (-ve).
+                    <h3>2. Stress & Strain</h3>
+                    Tension, compression, shear stresses. Strain, elasticity, Hooke's Law. Limit of proportionality, modulus of elasticity. Stress-strain curve with yield point, ultimate strength, rupture
 
-                    <h3>3. Strain (ε) = ΔL/L</h3>
-                    Measure of deformation. Direct strain is dimensionless. Ratio of change in length to original length.
+                    <h3>3. Elastic Constants</h3>
+                    Lateral strain, Poisson's ratio μ. Shear modulus G, bulk modulus K. Relations: E = 2G(1+μ) = 3K(1-2μ)
 
-                    <h3>4. Hooke's Law: σ = Eε</h3>
-                    Within elastic limit, stress ∝ strain. E = Young's modulus / modulus of elasticity. Units: N/mm² or GPa.
+                    <h3>4. Temperature Stresses</h3>
+                    Deformation of simple & compound bars due to temp change
 
-                    <h3>5. Stress-Strain Diagram - Key Points</h3>
-                    - Limit of Proportionality: Stress ∝ strain
-                    - Elastic Limit: Strain disappears completely if unloaded
-                    - Upper Yield Point: ~250 N/mm² for mild steel, strain ~0.125%
-                    - Ultimate Stress: Max stress ~370-400 N/mm²
-                    - Breaking Point: Failure, strain 20-25%
+                    <h3>5. Biaxial Stress & Mohr's Circle</h3>
+                    Stress at a point, stress on inclined plane, principal stresses & principal planes
 
-                    <h3>6. Topic 2: Equilibrium of Forces</h3>
-                    ΣF_x = 0, ΣF_y = 0, ΣM = 0. Free Body Diagrams isolate the body and show all external forces + reactions.
+                    <h3>6. Equilibrium of Forces</h3>
+                    ΣF_x = 0, ΣF_y = 0, ΣM = 0. Free Body Diagrams isolate the body and show all external forces + reactions
 
-                    <h3>7. Topic 3: Support Reactions</h3>
-                    Roller: 1 reaction ⊥ surface. Pin: 2 reactions. Fixed: 3 reactions. Solve using equilibrium equations.
+                    <h3>7. Support Reactions</h3>
+                    Roller: 1 reaction ⊥ surface. Pin: 2 reactions. Fixed: 3 reactions. Solve using equilibrium equations
                 </div>
             </div>
 
@@ -287,17 +294,27 @@
                 <div class="formula">E = σ/ε → Young's Modulus</div>
                 <div class="formula">δ = FL/AE → Axial Deformation</div>
                 <div class="formula">ΣF=0, ΣM=0 → Equilibrium</div>
+                <div class="formula">E = 2G(1+μ) = 3K(1-2μ) → Elastic Constants</div>
             </div>
 
-            <!-- Module 1 Topics Checklist -->
+            <!-- Topics Checklist -->
             <div class="card full">
                 <h2>🏗️ Module 1 Topics Checklist</h2>
                 <div id="topicsList"></div>
             </div>
 
+            <!-- Practice Questions -->
+            <div class="card full">
+                <h2>📝 Practice Questions</h2>
+                <div class="formula">Q1: Define Poisson's Ratio</div>
+                <div class="formula">Q2: Show relation between E and G</div>
+                <div class="formula">Q3: Calculate elongation: L=2m, d=15mm, P=30kN, E=120GPa</div>
+                <div class="formula">Q4: Define principal planes and principal stresses</div>
+            </div>
+
             <!-- Resources -->
             <div class="card full">
-                <h2>📚 Working Lecture Notes & Resources</h2>
+                <h2>📚 Working Resources</h2>
                 <a href="https://nptel.ac.in/courses/105105108" target="_blank" class="resource">
                     NPTEL Strength of Materials - IIT Lecture PDFs + Videos
                 </a>
@@ -396,10 +413,10 @@
             const doc = new jsPDF();
             const notes = document.getElementById('lectureNotes').innerText;
             doc.setFontSize(16);
-            doc.text("Module 1: Stress & Strain - Notes", 20, 20);
+            doc.text("VOID STUDY HUB - Module 1 Notes", 20, 20);
             doc.setFontSize(10);
             doc.text(doc.splitTextToSize(notes, 170), 20, 30);
-            doc.save("Structures1_Module1_Notes.pdf");
+            doc.save("VOID_Module1_StrengthOfMaterials.pdf");
         }
 
         // Module 1 Topics
@@ -414,3 +431,33 @@
             "8. Axial Deformation & Thermal Effects"
         ];
 
+        function renderTopics() {
+            const saved = JSON.parse(localStorage.getItem('structures1') || '[]');
+            const list = document.getElementById('topicsList');
+            list.innerHTML = structuresTopics.map((topic, i) => `
+                <label class="topic-check ${saved.includes(i)? 'done' : ''}">
+                    <input type="checkbox" ${saved.includes(i)? 'checked' : ''} onchange="toggleTopic(${i})">
+                    <span>${topic}</span>
+                </label>
+            `).join('');
+            document.getElementById('topicsDone').textContent = saved.length;
+        }
+
+        function toggleTopic(index) {
+            let saved = JSON.parse(localStorage.getItem('structures1') || '[]');
+            if (saved.includes(index)) {
+                saved = saved.filter(i => i!== index);
+            } else {
+                saved.push(index);
+            }
+            localStorage.setItem('structures1', JSON.stringify(saved));
+            renderTopics();
+        }
+
+        // Load on start
+        updateDisplay();
+        renderTopics();
+        document.getElementById('sessions').textContent = localStorage.getItem('sessions') || 0;
+    </script>
+</body>
+</html>
