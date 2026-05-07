@@ -11,9 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Space Grotesk', sans-serif;
             background: #0a0a0f;
@@ -21,9 +19,7 @@
             padding: 20px;
             min-height: 100vh;
         }
-
    .container { max-width: 700px; margin: 0 auto; }
-
    .header {
             text-align: center;
             margin-bottom: 30px;
@@ -33,7 +29,6 @@
             border: 1px solid #0f0;
             box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
         }
-
         h1 { 
             font-size: 28px; 
             margin-bottom: 5px; 
@@ -41,21 +36,18 @@
             text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
         }
    .sub { color: #0f0; font-size: 13px; font-weight: 700; }
-
    .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             margin-bottom: 20px;
         }
-
    .card {
             background: #11111b;
             border: 1px solid #2a2a3e;
             border-radius: 12px;
             padding: 20px;
         }
-
    .card h2 {
             font-size: 16px;
             margin-bottom: 15px;
@@ -63,10 +55,8 @@
             align-items: center;
             gap: 8px;
         }
-
    .timer { text-align: center; }
         #time { font-size: 48px; font-weight: 700; margin: 15px 0; color: #0f0; }
-
    .btn {
             background: #1e1e2e;
             border: 1px solid #3a3a4e;
@@ -80,7 +70,6 @@
         }
    .btn:hover { background: #0f0; color: #000; }
    .btn-small { padding: 6px 12px; font-size: 12px; }
-
    .input-group { margin-bottom: 12px; }
    .input-group label {
             display: block;
@@ -97,20 +86,6 @@
             border-radius: 8px;
             font-family: inherit;
       }
-
-   .textarea {
-            width: 100%;
-            background: #1e1e2e;
-            border: 1px solid #3a3a4e;
-            color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            font-family: inherit;
-            min-height: 120px;
-            resize: vertical;
-            line-height: 1.5;
-      }
-
    .resource {
             background: #1a1a2a;
             padding: 12px;
@@ -123,9 +98,7 @@
             transition: 0.2s;
         }
    .resource:hover { background: #0f0; color: #000; }
-
    .full { grid-column: 1 / -1; }
-
    .topic-check {
             display: flex;
             align-items: center;
@@ -136,10 +109,8 @@
             margin-bottom: 8px;
             font-size: 14px;
        }
-
    .topic-check input { accent-color: #0f0; width: 18px; height: 18px; }
    .topic-check.done { opacity: 0.6; }
-
    .formula {
             background: #0d0d15;
             border-left: 3px solid #0f0;
@@ -149,7 +120,6 @@
             font-family: monospace;
             font-size: 13px;
        }
-
    .result {
             background: #0d1f0d;
             border: 1px solid #0f0;
@@ -158,24 +128,23 @@
             margin-top: 12px;
             font-size: 14px;
       }
-
    .result strong { color: #0f0; }
-
    .note-content {
             background: #0d0d15;
             border: 1px solid #2a2a3e;
             padding: 15px;
             border-radius: 8px;
             font-size: 13px;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #ccc;
-            max-height: 300px;
+            max-height: 500px;
             overflow-y: auto;
      }
-
-   .note-content h3 { color: #0f0; margin: 15px 0 8px 0; font-size: 14px; }
+   .note-content h3 { color: #0f0; margin: 18px 0 8px 0; font-size: 15px; }
    .note-content h3:first-child { margin-top: 0; }
-
+   .note-content h4 { color: #0f0; margin: 12px 0 6px 0; font-size: 13px; }
+   .note-content ul { margin-left: 18px; margin-bottom: 10px; }
+   .note-content li { margin-bottom: 6px; }
    .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
@@ -192,7 +161,6 @@
             height: 100%;
             border: 0;
    }
-
         @media (max-width: 600px) {
        .grid { grid-template-columns: 1fr; }
         }
@@ -223,40 +191,145 @@
                 <button class="btn btn-small" onclick="downloadPDF()">📄 Download Notes PDF</button>
             </div>
 
-            <!-- Module 1 Notes -->
+            <!-- COMPREHENSIVE MODULE 1 NOTES -->
             <div class="card full">
-                <h2>🏗️ Module 1: Strength of Materials</h2>
+                <h2>🏗️ Module 1: Complete Notes</h2>
                 <div class="note-content" id="lectureNotes">
-                    <h3>1. Introduction</h3>
-                    Rigid bodies vs deformable solids. Stability, strength, stiffness. Concept of homogeneous, isotropic material. Principle of superposition, St. Venant principle
+                    <h3>1. Introduction to Strength of Materials</h3>
+                    <h4>Rigid vs Deformable Bodies</h4>
+                    <ul>
+                        <li><strong>Rigid Body:</strong> No deformation under load. Used in Statics.</li>
+                        <li><strong>Deformable Body:</strong> Changes shape/size under load. Real materials deform first, then fail.</li>
+                    </ul>
+                    <h4>Key Properties</h4>
+                    <ul>
+                        <li><strong>Strength:</strong> Ability to resist failure under external force</li>
+                        <li><strong>Stiffness:</strong> Ability to resist deformation</li>
+                        <li><strong>Stability:</strong> Ability to maintain equilibrium</li>
+                    </ul>
+                    <h4>Material Assumptions</h4>
+                    <ul>
+                        <li><strong>Homogeneous:</strong> Same properties throughout</li>
+                        <li><strong>Isotropic:</strong> Same properties in all directions</li>
+                        <li><strong>Continuous:</strong> No voids or cracks</li>
+                    </ul>
 
-                    <h3>2. Stress & Strain</h3>
-                    Tension, compression, shear stresses. Strain, elasticity, Hooke's Law. Limit of proportionality, modulus of elasticity. Stress-strain curve with yield point, ultimate strength, rupture
+                    <h3>2. Simple Stress & Strain</h3>
+                    <h4>Normal Stress σ = P/A</h4>
+                    <ul>
+                        <li>Force per unit area ⊥ to cross-section</li>
+                        <li><strong>Tensile:</strong> +ve, pulls material apart</li>
+                        <li><strong>Compressive:</strong> -ve, pushes material together</li>
+                        <li>Units: N/mm² = MPa, N/m² = Pa</li>
+                    </ul>
+                    <h4>Shear Stress τ = V/A</h4>
+                    <ul>
+                        <li>Force per unit area || to cross-section</li>
+                        <li>Causes sliding of layers</li>
+                        <li>Single shear: τ = P/A, Double shear: τ = P/2A</li>
+                    </ul>
+                    <h4>Normal Strain ε = ΔL/L</h4>
+                    <ul>
+                        <li>Ratio of change in length to original length</li>
+                        <li>Dimensionless, often given as % or μ-strain</li>
+                        <li><strong>Tensile strain:</strong> +ve elongation</li>
+                        <li><strong>Compressive strain:</strong> -ve shortening</li>
+                    </ul>
 
-                    <h3>3. Elastic Constants</h3>
-                    Lateral strain, Poisson's ratio μ. Shear modulus G, bulk modulus K. Relations: E = 2G(1+μ) = 3K(1-2μ)
+                    <h3>3. Hooke's Law & Elastic Constants</h3>
+                    <h4>Hooke's Law: σ = Eε</h4>
+                    <ul>
+                        <li>Valid within elastic limit: stress ∝ strain</li>
+                        <li><strong>E = Young's Modulus:</strong> Modulus of elasticity</li>
+                        <li>Steel: E ≈ 200 GPa, Concrete: E ≈ 25 GPa, Aluminum: E ≈ 70 GPa</li>
+                    </ul>
+                    <h4>Stress-Strain Curve for Mild Steel</h4>
+                    <ul>
+                        <li><strong>Proportional Limit:</strong> End of linear region</li>
+                        <li><strong>Elastic Limit:</strong> No permanent deformation if unloaded</li>
+                        <li><strong>Yield Point:</strong> ~250 MPa, strain ~0.125%. Large deformation begins</li>
+                        <li><strong>Ultimate Strength:</strong> ~400 MPa, maximum stress</li>
+                        <li><strong>Rupture:</strong> Failure, strain ~20-25%</li>
+                    </ul>
+                    <h4>Poisson's Ratio μ = -Lateral Strain / Axial Strain</h4>
+                    <ul>
+                        <li>Ratio of lateral contraction to axial elongation</li>
+                        <li>Steel: μ ≈ 0.3, Concrete: μ ≈ 0.2, Rubber: μ ≈ 0.5</li>
+                        <li>0 ≤ μ ≤ 0.5 for engineering materials</li>
+                    </ul>
+                    <h4>Shear Modulus G = τ/γ</h4>
+                    <ul>
+                        <li>Modulus of rigidity, relates shear stress to shear strain</li>
+                        <li>G = E / 2(1+μ)</li>
+                    </ul>
+                    <h4>Bulk Modulus K = Volumetric Stress / Volumetric Strain</h4>
+                    <ul>
+                        <li>Resistance to uniform compression</li>
+                        <li>K = E / 3(1-2μ)</li>
+                    </ul>
+                    <h4>Relation Between E, G, K, μ</h4>
+                    <div class="formula">E = 2G(1+μ) = 3K(1-2μ)</div>
+                    <div class="formula">E = 9KG / (3K+G)</div>
 
-                    <h3>4. Temperature Stresses</h3>
-                    Deformation of simple & compound bars due to temp change
+                    <h3>4. Axial Deformation</h3>
+                    <h4>Deformation of Prismatic Bar: δ = PL/AE</h4>
+                    <ul>
+                        <li>P = Axial load, L = Length, A = Area, E = Young's modulus</li>
+                        <li>For stepped bars: δ_total = Σ(PL/AE) for each segment</li>
+                    </ul>
+                    <h4>Thermal Stress: σ = EαΔT</h4>
+                    <ul>
+                        <li>α = Coefficient of thermal expansion per °C</li>
+                        <li>If free to expand: δ_T = αLΔT, no stress</li>
+                        <li>If restrained: Stress develops. Expansion restrained → compression</li>
+                    </ul>
 
-                    <h3>5. Biaxial Stress & Mohr's Circle</h3>
-                    Stress at a point, stress on inclined plane, principal stresses & principal planes
+                    <h3>5. Equilibrium & Support Reactions</h3>
+                    <h4>Conditions of Equilibrium</h4>
+                    <ul>
+                        <li>ΣF_x = 0, ΣF_y = 0, ΣM = 0</li>
+                        <li>Free Body Diagram: Isolate body, show ALL external forces + reactions</li>
+                    </ul>
+                    <h4>Types of Supports</h4>
+                    <ul>
+                        <li><strong>Roller:</strong> 1 reaction ⊥ to surface</li>
+                        <li><strong>Pin/Hinge:</strong> 2 reactions: R_x, R_y</li>
+                        <li><strong>Fixed:</strong> 3 reactions: R_x, R_y, M</li>
+                    </ul>
 
-                    <h3>6. Equilibrium of Forces</h3>
-                    ΣF_x = 0, ΣF_y = 0, ΣM = 0. Free Body Diagrams isolate the body and show all external forces + reactions
+                    <h3>6. Biaxial Stress & Principal Stresses</h3>
+                    <h4>Stress on Inclined Plane</h4>
+                    <div class="formula">σ_n = (σ_x + σ_y)/2 + (σ_x - σ_y)/2 × cos2θ + τ_xy × sin2θ</div>
+                    <div class="formula">τ_n = -(σ_x - σ_y)/2 × sin2θ + τ_xy × cos2θ</div>
+                    <h4>Principal Stresses</h4>
+                    <ul>
+                        <li>Planes where shear stress = 0</li>
+                        <li>σ_1,2 = (σ_x + σ_y)/2 ± √[((σ_x - σ_y)/2)² + τ_xy²]</li>
+                        <li>Max shear: τ_max = (σ_1 - σ_2)/2</li>
+                    </ul>
 
-                    <h3>7. Support Reactions</h3>
-                    Roller: 1 reaction ⊥ surface. Pin: 2 reactions. Fixed: 3 reactions. Solve using equilibrium equations
+                    <h3>7. Key Assumptions for Module 1</h3>
+                    <ul>
+                        <li>Loads applied through centroid to avoid bending</li>
+                        <li>Cross-section remains plane after deformation</li>
+                        <li>Material obeys Hooke's Law</li>
+                        <li>Deformations are small</li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Embedded YouTube -->
+            <!-- Embedded YouTube - FIXED -->
             <div class="card full">
                 <h2>▶️ Watch: Stress & Strain Explained</h2>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/3pl02oMsfaE" allowfullscreen></iframe>
+                <div style="display:flex;gap:8px;margin-bottom:10px;">
+                    <button class="btn btn-small" onclick="switchVideo('EN4Zz0GLZpA')">Efficient Engineer</button>
+                    <button class="btn btn-small" onclick="switchVideo('aQf6Q8t1FQE')">Jeff Hanson</button>
+                    <button class="btn btn-small" onclick="switchVideo('p9qpU8MXsBM')">NPTEL IIT</button>
                 </div>
-                <p style="font-size:12px;color:#999;margin-top:8px;">StructureFree - Normal Stress & Strain</p>
+                <div class="video-wrapper">
+                    <iframe id="ytPlayer" src="https://www.youtube.com/embed/EN4Zz0GLZpA" allowfullscreen></iframe>
+                </div>
+                <p style="font-size:12px;color:#999;margin-top:8px;" id="videoCredit">The Efficient Engineer - Understanding Stress</p>
             </div>
 
             <!-- Stress & Strain Calculator -->
@@ -288,13 +361,17 @@
 
             <!-- Key Formulas -->
             <div class="card full">
-                <h2>📐 Key Formulas</h2>
+                <h2>📐 Key Formulas - Module 1</h2>
                 <div class="formula">σ = F/A → Normal Stress (MPa)</div>
+                <div class="formula">τ = V/A → Shear Stress (MPa)</div>
                 <div class="formula">ε = ΔL/L → Normal Strain</div>
-                <div class="formula">E = σ/ε → Young's Modulus</div>
+                <div class="formula">γ = τ/G → Shear Strain</div>
+                <div class="formula">σ = Eε → Hooke's Law</div>
                 <div class="formula">δ = FL/AE → Axial Deformation</div>
-                <div class="formula">ΣF=0, ΣM=0 → Equilibrium</div>
+                <div class="formula">δ_T = αLΔT → Thermal Deformation</div>
+                <div class="formula">μ = -ε_lateral/ε_axial → Poisson's Ratio</div>
                 <div class="formula">E = 2G(1+μ) = 3K(1-2μ) → Elastic Constants</div>
+                <div class="formula">ΣF_x=0, ΣF_y=0, ΣM=0 → Equilibrium</div>
             </div>
 
             <!-- Topics Checklist -->
@@ -305,24 +382,25 @@
 
             <!-- Practice Questions -->
             <div class="card full">
-                <h2>📝 Practice Questions</h2>
-                <div class="formula">Q1: Define Poisson's Ratio</div>
-                <div class="formula">Q2: Show relation between E and G</div>
-                <div class="formula">Q3: Calculate elongation: L=2m, d=15mm, P=30kN, E=120GPa</div>
-                <div class="formula">Q4: Define principal planes and principal stresses</div>
+                <h2>📝 Module 1 Practice Questions</h2>
+                <div class="formula">Q1: Define Poisson's Ratio and state typical values for steel</div>
+                <div class="formula">Q2: Derive the relation E = 2G(1+μ)</div>
+                <div class="formula">Q3: A bar L=2m, d=15mm, P=30kN, E=120GPa. Find elongation</div>
+                <div class="formula">Q4: Explain principal planes and principal stresses</div>
+                <div class="formula">Q5: A steel rod is heated 50°C while restrained. E=200GPa, α=12×10⁻⁶/°C. Find thermal stress</div>
             </div>
 
             <!-- Resources -->
             <div class="card full">
-                <h2>📚 Working Resources</h2>
+                <h2>📚 External Resources</h2>
                 <a href="https://nptel.ac.in/courses/105105108" target="_blank" class="resource">
                     NPTEL Strength of Materials - IIT Lecture PDFs + Videos
                 </a>
-                <a href="https://mathalino.com/reviewer/strength-materials/simple-stress" target="_blank" class="resource">
-                    Mathalino - Simple Stress & Strain with Examples
+                <a href="https://mathalino.com/reviewer/mechanics-and-strength-materials/solution-to-problem-108-normal-stress" target="_blank" class="resource">
+                    Mathalino - Normal Stress Solved Problems
                 </a>
-                <a href="https://www.youtube.com/@StructureFree" target="_blank" class="resource">
-                    StructureFree - YouTube: Best SFD/BMD + Stress Tutorials
+                <a href="https://mathalino.com/reviewer/mechanics-and-strength-materials/solution-to-problem-264-thermal-stress" target="_blank" class="resource">
+                    Mathalino - Thermal Stress Examples
                 </a>
                 <a href="https://skyciv.com/free-beam-calculator/" target="_blank" class="resource">
                     SkyCiv Beam Calculator - Free SFD/BMD Tool
@@ -371,6 +449,17 @@
             updateDisplay();
         }
 
+        // YouTube Video Switcher
+        function switchVideo(videoId) {
+            document.getElementById('ytPlayer').src = `https://www.youtube.com/embed/${videoId}`;
+            const credits = {
+                'EN4Zz0GLZpA': 'The Efficient Engineer - Understanding Stress',
+                'aQf6Q8t1FQE': 'Jeff Hanson - Mechanics of Materials: Normal Stress', 
+                'p9qpU8MXsBM': 'NPTEL - Introduction to Strength of Materials'
+            };
+            document.getElementById('videoCredit').textContent = credits[videoId];
+        }
+
         // Stress & Strain Calculator
         function calcStressStrain() {
             const F = parseFloat(document.getElementById('force').value);
@@ -413,7 +502,7 @@
             const doc = new jsPDF();
             const notes = document.getElementById('lectureNotes').innerText;
             doc.setFontSize(16);
-            doc.text("VOID STUDY HUB - Module 1 Notes", 20, 20);
+            doc.text("VOID STUDY HUB - Module 1: Strength of Materials", 20, 20);
             doc.setFontSize(10);
             doc.text(doc.splitTextToSize(notes, 170), 20, 30);
             doc.save("VOID_Module1_StrengthOfMaterials.pdf");
@@ -421,14 +510,14 @@
 
         // Module 1 Topics
         const structuresTopics = [
-            "1. Concept of strain and stress",
-            "2. Equilibrium & Free Body Diagrams", 
-            "3. Support Reactions - Beams & Frames",
-            "4. Shear Force & Bending Moment Diagrams",
-            "5. Centroids & Moment of Inertia",
-            "6. Normal Stress & Strain",
-            "7. Shear Stress & Strain", 
-            "8. Axial Deformation & Thermal Effects"
+            "1. Rigid vs Deformable Bodies & Material Properties",
+            "2. Normal Stress, Shear Stress & Strain",
+            "3. Hooke's Law & Young's Modulus E",
+            "4. Poisson's Ratio & Lateral Strain",
+            "5. Shear Modulus G & Bulk Modulus K",
+            "6. Axial & Thermal Deformation", 
+            "7. Equilibrium & Support Reactions",
+            "8. Principal Stresses & Biaxial Stress"
         ];
 
         function renderTopics() {
