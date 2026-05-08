@@ -26,7 +26,7 @@
             background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
             border-radius: 16px;
             border: 1px solid #0f0;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 255, 0.1);
         }
         h1 { 
             font-size: 28px; 
@@ -168,6 +168,18 @@
             margin: 10px 0;
             border: 1px solid #2a2a3e;
    }
+   .example-box {
+            background: #0a1a0a;
+            border: 1px solid #0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+   }
+   .example-box h5 {
+            color: #0f0;
+            margin-bottom: 10px;
+            font-size: 14px;
+   }
    .footer {
             text-align: center;
             margin-top: 40px;
@@ -233,91 +245,208 @@
             <div class="card">
                 <h2>📊 Today</h2>
                 <p>Sessions: <span id="sessions">0</span></p>
-                <p style="margin: 10px 0;">Topics Done: <span id="topicsDone">0</span>/6</p>
+                <p style="margin: 10px 0;">Topics Done: <span id="topicsDone">0</span>/12</p>
                 <button class="btn btn-small" onclick="downloadPDF()">📄 Download Notes PDF</button>
             </div>
 
-            <!-- SIMPLE MODULE 1 NOTES -->
+            <!-- COMPLETE MODULE 1 NOTES WITH ALL YOUR HANDWRITTEN PAGES -->
             <div class="card full">
-                <h2>📖 Module 1: Simple Notes</h2>
+                <h2>📖 Module 1: Complete Notes + Worked Examples</h2>
                 <div class="note-content" id="lectureNotes">
-                    <h3>1. What is Strength of Materials?</h3>
+                    <h3>1. DIRECT STRESS</h3>
+                    
+                    <h4>A. Stress</h4>
                     <div class="simple-box">
-                        <strong>Simple:</strong> It studies how materials behave when you push, pull, or twist them. 
+                        <strong>Definition:</strong> Direct stress is the internal resistance force offered by a material per unit area when external force is applied.
                         <br><br>
-                        <strong>Why?</strong> So buildings and bridges don't break.
-                    </div>
-                    <ul>
-                        <li><strong>Strength:</strong> How much force before it breaks</li>
-                        <li><strong>Stiffness:</strong> How much it bends/stretches</li>
-                    </ul>
-
-                    <h3>2. Stress = Force ÷ Area</h3>
-                    <div class="simple-box">
-                        <strong>Formula:</strong> σ = F / A
+                        <strong>Formula:</strong> Stress = F / A
                         <br>
-                        <strong>Units:</strong> N/mm² = MPa
-                    </div>
-                    <h4>Two Types:</h4>
-                    <ul>
-                        <li><strong>Tensile Stress:</strong> Pulling apart. Like stretching a rubber band. +ve</li>
-                        <li><strong>Compressive Stress:</strong> Pushing together. Like squashing a can. -ve</li>
-                        <li><strong>Shear Stress:</strong> Sliding force. Like scissors cutting paper. τ = V / A</li>
-                    </ul>
-                    <div class="simple-box">
-                        <strong>Example:</strong> 1000N force on 100mm² area → Stress = 1000/100 = 10 MPa
-                    </div>
-
-                    <h3>3. Strain = How Much It Stretches</h3>
-                    <div class="simple-box">
-                        <strong>Formula:</strong> ε = Change in Length / Original Length = ΔL / L
+                        <strong>Units:</strong> N/mm² or N/m²
                         <br>
-                        <strong>Units:</strong> No units. Just a number.
+                        <strong>Denoted by:</strong> σ (sigma)
                     </div>
-                    <ul>
-                        <li>If a 1000mm bar stretches by 2mm → Strain = 2/1000 = 0.002</li>
-                        <li><strong>Tensile strain:</strong> Gets longer, +ve</li>
-                        <li><strong>Compressive strain:</strong> Gets shorter, -ve</li>
-                    </ul>
 
-                    <h3>4. Hooke's Law: Stress ∝ Strain</h3>
+                    <h4>B. Strain</h4>
                     <div class="simple-box">
-                        <strong>Formula:</strong> σ = E × ε
+                        <strong>Definition:</strong> Strain is a measure of deformation of a material due to applied stress. It is the ratio of change in dimension to original dimension.
+                        <br><br>
+                        <strong>Formula:</strong> ε = ΔL / L
                         <br>
-                        <strong>E = Young's Modulus</strong> - shows how stiff material is
+                        <strong>Denoted by:</strong> ε (epsilon)
+                        <br>
+                        <strong>Note:</strong> Strain has no unit. It is dimensionless.
                     </div>
+
+                    <h3>2. Elastic Limit</h3>
+                    <div class="simple-box">
+                        The maximum value to which material returns to its original shape and size when load is withdrawn.
+                    </div>
+
+                    <h3>3. Hooke's Law</h3>
+                    <div class="simple-box">
+                        <strong>States:</strong> Within the proportional limit, stress is directly proportional to strain.
+                        <br><br>
+                        <strong>Therefore:</strong> σ ∝ ε → σ = Eε
+                        <br>
+                        <strong>E = Young's Modulus / Elastic Modulus</strong>
+                    </div>
+
+                    <h3>4. Young's Modulus (E) - Elastic Modulus</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Young Modulus is the measure of stiffness of a material. It defines the ratio of stress to strain within the elastic limit (region).
+                        <br><br>
+                        <strong>Formula:</strong> E = Stress / Strain = σ / ε = (F/A) / (ΔL/L)
+                        <br>
+                        <strong>Denoted by:</strong> E
+                        <br>
+                        <strong>Units:</strong> N/mm² or GPa
+                    </div>
+
+                    <h3>5. Modulus of Rigidity (G) - Shear Modulus</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Modulus of rigidity is the property of a material that measures its ability to resist shear deformation.
+                        <br><br>
+                        It is defined as the ratio of shear stress to shear strain within the elastic limit of material.
+                        <br><br>
+                        <strong>Formula:</strong> G = τ / γ
+                        <br>
+                        <strong>Where:</strong>
+                        <br>• G = Modulus of rigidity
+                        <br>• τ = Shear stress (force per unit area)
+                        <br>• γ = Shear strain (angular deformation)
+                        <br><br>
+                        <strong>Key Point:</strong> When a body is subjected to shear force it tends to change shape but volume remains the same.
+                        <br><br>
+                        <strong>High value of G</strong> means a material is more resistant to shear deformation.
+                    </div>
+
+                    <h3>6. Poisson's Ratio (ν)</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Poisson's ratio is the measure of lateral contraction (or expansion) of a material when it is stretched (or compressed) in one direction.
+                        <br><br>
+                        It is defined as the ratio of the lateral strain to longitudinal strain.
+                        <br><br>
+                        <strong>Formula:</strong> ν = - (Lateral Strain / Longitudinal Strain)
+                        <br><br>
+                        <strong>Where:</strong>
+                        <br>• Lateral Strain = Δd / d (Change in diameter per original diameter)
+                        <br>• Longitudinal Strain = ΔL / L (Change in length per original length)
+                        <br><br>
+                        <strong>Note:</strong> -ve shows that when length increases, diameter decreases.
+                    </div>
+
+                    <div class="example-box">
+                        <h5>Example 1: Poisson's Ratio Calculation</h5>
+                        If a steel load elongates by 0.1% in length and contracts by 0.3% in diameter:
+                        <br><br>
+                        <strong>Given:</strong>
+                        <br>Longitudinal strain = 0.1% = 0.001
+                        <br>Lateral strain = -0.3% = -0.003 (negative because contraction)
+                        <br><br>
+                        <strong>Solution:</strong>
+                        <br>ν = - (Lateral Strain / Longitudinal Strain)
+                        <br>ν = - (-0.003 / 0.001)
+                        <br>ν = 0.003 / 0.001 = 3
+                    </div>
+
+                    <h3>7. Types of Stresses</h3>
                     <ul>
-                        <li><strong>Steel:</strong> E = 200,000 MPa - very stiff</li>
-                        <li><strong>Aluminum:</strong> E = 70,000 MPa - less stiff</li>
-                        <li><strong>Rubber:</strong> E = 10 MPa - very flexible</li>
-                        <li><strong>Bigger E = Harder to stretch</strong></li>
+                        <li><strong>1. Tensional Stress:</strong> Pulling apart</li>
+                        <li><strong>2. Compression Stress:</strong> Pushing together</li>
                     </ul>
 
-                    <h3>5. How Much Does It Stretch? δ = FL/AE</h3>
+                    <div class="example-box">
+                        <h5>Example 2: Steel Bar Elongation</h5>
+                        A steel load 1m long and 20mm by 20mm in cross section is subjected to a tensile force of 40kN. Determine the elongation of length if Modulus of elasticity is 200 N/mm².
+                        <br><br>
+                        <strong>Given:</strong>
+                        <br>L = 1m = 1000mm
+                        <br>Cross-section = 20mm × 20mm = 400mm²
+                        <br>F = 40kN = 40,000N
+                        <br>E = 200 N/mm²
+                        <br><br>
+                        <strong>Solution:</strong>
+                        <br>σ = F/A = 40000 / 400 = 100 N/mm²
+                        <br><br>
+                        ε = σ/E = 100 / 200 = 0.5
+                        <br><br>
+                        ε = ΔL/L
+                        <br>ΔL = L × ε = 1000 × 0.5 = 500mm
+                        <br><br>
+                        <strong>Answer: Elongation = 500mm</strong>
+                    </div>
+
+                    <h3>8. Yield Strength</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Yield strength is the minimum stress at which material begins to deform plastically.
+                        <br><br>
+                        At yield stress, the material reaches its elastic limit. Any stress beyond this point subjects the material to plastic deformation.
+                    </div>
+
+                    <h3>9. Ultimate Stress</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Ultimate stress is the maximum stress a material can withstand before it begins to fail.
+                    </div>
+
+                    <h3>10. Fracture Stress</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Fracture stress is the breaking stress at which the material fails.
+                        <br><br>
+                        <strong>Formula:</strong> σ_u = F_max / A_o
+                        <br>
+                        <strong>Where:</strong>
+                        <br>• F_max = Maximum load applied before failure
+                        <br>• A_o = Original cross-section area of the material
+                    </div>
+
+                    <h3>11. Factor of Safety (F.O.S)</h3>
+                    <div class="simple-box">
+                        <strong>Why use it?</strong> Since materials may have hidden defects, loads or unexpected stresses may occur, engineers do not use full strength of materials. Instead they apply a Factor of Safety.
+                        <br><br>
+                        <strong>Commonly ranged:</strong> 1.5 to 3 for metals, higher for brittle materials.
+                    </div>
+
+                    <h3>12. Permissible / Safe Stress</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Permissible stress is the maximum stress that a material is allowed to carry safely in design.
+                        <br><br>
+                        It is always less than the yield stress or ultimate stress.
+                        <br><br>
+                        <strong>Formula:</strong> Permissible Stress = Yield Stress (or Ultimate Stress) / Factor of Safety
+                    </div>
+
+                    <div class="example-box">
+                        <h5>Example 3: Safe Stress Calculation</h5>
+                        If yield stress of a material is 250 N/mm² and factor of safety is 2.5, determine safe stress.
+                        <br><br>
+                        <strong>Solution:</strong>
+                        <br>Safe Stress = Yield Stress / Factor of Safety
+                        <br>= 250 / 2.5
+                        <br>= 100 N/mm²
+                        <br><br>
+                        <strong>So in design, the steel will only be stressed up to 100 N/mm²</strong>
+                    </div>
+
+                    <h3>13. Working Stress</h3>
+                    <div class="simple-box">
+                        <strong>Definition:</strong> Working stress is the actual stress produced in the material under service load.
+                        <br><br>
+                        It is the stress a structural material experiences during normal operation and it is always less than or equal to permissible stress.
+                        <br><br>
+                        <strong>Formula:</strong> Working Stress = Load Applied / Cross-sectional Area (A_o)
+                        <br><br>
+                        <strong>Rule:</strong> Working Stress ≤ Safe Stress
+                    </div>
+
+                    <h3>14. How Much Does It Stretch? δ = FL/AE</h3>
                     <div class="simple-box">
                         <strong>Formula:</strong> Deformation δ = Force × Length / Area × E
                         <br><br>
                         <strong>Meaning:</strong> More force = more stretch. Longer bar = more stretch. 
                         <br>Bigger area or stiffer material = less stretch.
                     </div>
-                    <div class="simple-box">
-                        <strong>Example:</strong> Steel bar, F=10,000N, L=2000mm, A=100mm², E=200,000MPa
-                        <br>δ = 10,000×2000 / 100×200,000 = 1mm stretch
-                    </div>
 
-                    <h3>6. Poisson's Ratio: Side Squeeze</h3>
-                    <div class="simple-box">
-                        <strong>Simple:</strong> When you pull a material, it gets thinner on the sides.
-                        <br>
-                        <strong>μ = Side strain / Pulling strain</strong>
-                    </div>
-                    <ul>
-                        <li><strong>Steel:</strong> μ = 0.3</li>
-                        <li><strong>Concrete:</strong> μ = 0.2</li>
-                        <li>If μ = 0.3 and you stretch 0.001, sides shrink by 0.0003</li>
-                    </ul>
-
-                    <h3>7. Temperature Changes Cause Stress Too</h3>
+                    <h3>15. Temperature Changes Cause Stress Too</h3>
                     <div class="simple-box">
                         <strong>If free to expand:</strong> δ = α × L × ΔT. No stress.
                         <br>
@@ -325,27 +454,10 @@
                         <br>
                         <strong>α:</strong> How much it expands per °C. Steel α = 12×10⁻⁶
                     </div>
-                    <div class="simple-box">
-                        <strong>Example:</strong> Steel blocked, heated 50°C → Stress = 200,000 × 12×10⁻⁶ × 50 = 120 MPa compression
-                    </div>
 
-                    <h3>8. Supports & Equilibrium</h3>
-                    <h4>To stay still, forces must balance:</h4>
-                    <ul>
-                        <li><strong>ΣF_x = 0:</strong> Left-right forces balance</li>
-                        <li><strong>ΣF_y = 0:</strong> Up-down forces balance</li>
-                        <li><strong>ΣM = 0:</strong> No spinning</li>
-                    </ul>
-                    <h4>Support Types:</h4>
-                    <ul>
-                        <li><strong>Roller:</strong> 1 force, up/down only</li>
-                        <li><strong>Pin:</strong> 2 forces, up/down + left/right</li>
-                        <li><strong>Fixed:</strong> 3 reactions, up/down + left/right + moment</li>
-                    </ul>
-
-                    <h3>9. Key Numbers to Remember</h3>
+                    <h3>16. Key Numbers to Remember</h3>
                     <div class="simple-box">
-                        <strong>Steel:</strong> E = 200 GPa, μ = 0.3, Yield = 250 MPa
+                        <strong>Steel:</strong> E = 200 GPa, G = 80 GPa, μ = 0.3, Yield = 250 MPa
                         <br>
                         <strong>Concrete:</strong> E = 25 GPa, μ = 0.2
                         <br>
@@ -367,55 +479,76 @@
                 <p style="font-size:12px;color:#999;margin-top:8px;" id="videoCredit">The Efficient Engineer - Understanding Stress</p>
             </div>
 
-            <!-- Simple Calculator -->
+            <!-- Calculator - UPDATED WITH POISSON -->
             <div class="card full">
                 <h2>📐 Easy Calculator</h2>
                 <div class="input-group">
                     <label>Force (N) - How hard you pull/push</label>
-                    <input type="number" class="input" id="force" placeholder="e.g. 5000">
+                    <input type="number" class="input" id="force" placeholder="e.g. 40000">
                 </div>
                 <div class="input-group">
                     <label>Area (mm²) - Cross-section size</label>
-                    <input type="number" class="input" id="area" placeholder="e.g. 100">
+                    <input type="number" class="input" id="area" placeholder="e.g. 400">
                 </div>
                 <div class="input-group">
                     <label>Length (mm) - Original length</label>
-                    <input type="number" class="input" id="length" placeholder="e.g. 2000">
+                    <input type="number" class="input" id="length" placeholder="e.g. 1000">
                 </div>
                 <div class="input-group">
                     <label>E (GPa) - Stiffness: Steel=200, Aluminum=70</label>
                     <input type="number" class="input" id="modulus" placeholder="e.g. 200">
                 </div>
+                <div class="input-group">
+                    <label>G (GPa) - Shear Modulus: Steel=80</label>
+                    <input type="number" class="input" id="shearModulus" placeholder="e.g. 80">
+                </div>
+                <div class="input-group">
+                    <label>Factor of Safety (F.O.S) - Usually 1.5 to 3</label>
+                    <input type="number" class="input" id="fos" placeholder="e.g. 2.5">
+                </div>
+                <div class="input-group">
+                    <label>Poisson's Ratio ν - Steel=0.3</label>
+                    <input type="number" class="input" id="poisson" placeholder="e.g. 0.3">
+                </div>
                 <button class="btn" onclick="calcStressStrain()">Calculate</button>
                 <div id="stressResult"></div>
             </div>
 
-            <!-- Key Formulas - Simple -->
+            <!-- Key Formulas - Updated -->
             <div class="card full">
-                <h2>📐 Only 4 Formulas You Need</h2>
-                <div class="formula">1. Stress σ = Force / Area → MPa</div>
-                <div class="formula">2. Strain ε = Stretch / Original Length → no units</div>
-                <div class="formula">3. Hooke's Law: σ = E × ε → relates stress & strain</div>
-                <div class="formula">4. Stretch δ = Force × Length / Area × E → mm</div>
+                <h2>📐 Key Formulas You Need</h2>
+                <div class="formula">1. Normal Stress σ = Force / Area → MPa</div>
+                <div class="formula">2. Shear Stress τ = Force / Area → MPa</div>
+                <div class="formula">3. Strain ε = ΔL / L → no units</div>
+                <div class="formula">4. Young's Modulus E = σ / ε → GPa</div>
+                <div class="formula">5. Shear Modulus G = τ / γ → GPa</div>
+                <div class="formula">6. Hooke's Law: σ = E × ε</div>
+                <div class="formula">7. Stretch δ = FL / AE → mm</div>
+                <div class="formula">8. Poisson's Ratio ν = - Lateral Strain / Longitudinal Strain</div>
+                <div class="formula">9. Safe Stress = Yield Stress / Factor of Safety</div>
+                <div class="formula">10. Fracture Stress σ_u = F_max / A_o</div>
+                <div class="formula">11. Working Stress ≤ Safe Stress</div>
             </div>
 
-            <!-- Topics Checklist -->
+            <!-- Topics Checklist - Updated -->
             <div class="card full">
                 <h2>✅ Module 1 Checklist</h2>
                 <div id="topicsList"></div>
             </div>
 
-            <!-- Simple Practice Questions -->
+            <!-- Practice Questions - Updated with Examples -->
             <div class="card full">
-                <h2>📝 Simple Practice Questions</h2>
+                <h2>📝 Practice Questions</h2>
                 <div class="formula">Q1: Force=1000N, Area=50mm². Find stress.</div>
                 <div class="formula">Q2: Bar 2m long stretches 1mm. Find strain.</div>
                 <div class="formula">Q3: Steel E=200GPa, strain=0.001. Find stress.</div>
-                <div class="formula">Q4: Force=5000N, L=1000mm, A=100mm², E=200GPa. Find stretch.</div>
-                <div class="formula">Q5: What does Young's Modulus tell you?</div>
+                <div class="formula">Q4: Yield=250MPa, F.O.S=2.5. Find safe stress.</div>
+                <div class="formula">Q5: Shear stress=40MPa, Shear modulus G=80GPa. Find shear strain.</div>
+                <div class="formula">Q6: Lateral strain=-0.0003, Longitudinal=0.001. Find Poisson's ratio.</div>
+                <div class="formula">Q7: 1m steel bar, 20×20mm, 40kN load, E=200GPa. Find elongation.</div>
             </div>
 
-            <!-- Contact Form - UPDATED EMAIL -->
+            <!-- Contact Form - YOUR EMAIL -->
             <div class="card full">
                 <h2>📬 Contact MR VOID</h2>
                 <form action="https://formsubmit.co/voidtech003@gmail.com" method="POST" class="contact-form">
@@ -511,12 +644,15 @@
             document.getElementById('videoCredit').textContent = credits[videoId];
         }
 
-        // Simple Calculator
+        // Calculator - UPDATED WITH POISSON
         function calcStressStrain() {
             const F = parseFloat(document.getElementById('force').value);
             const A = parseFloat(document.getElementById('area').value);
             const L = parseFloat(document.getElementById('length').value);
             const E = parseFloat(document.getElementById('modulus').value);
+            const G = parseFloat(document.getElementById('shearModulus').value);
+            const fos = parseFloat(document.getElementById('fos').value);
+            const nu = parseFloat(document.getElementById('poisson').value);
 
             if (!F ||!A) {
                 document.getElementById('stressResult').innerHTML = '<div class="result">Enter Force and Area first 💀</div>';
@@ -524,68 +660,27 @@
             }
 
             const stress = F / A;
-            let html = `<div class="result"><strong>Stress = ${stress.toFixed(2)} MPa</strong><br>This is how hard the material is being pulled per mm²</div>`;
+            let html = `<div class="result"><strong>Normal Stress σ = ${stress.toFixed(2)} MPa</strong><br>This is how hard the material is being pulled per mm²</div>`;
 
             if (L && E) {
                 const E_MPa = E * 1000;
                 const strain = stress / E_MPa;
                 const deformation = (F * L) / (A * E_MPa);
-                html += `<div class="result"><strong>Strain = ${strain.toExponential(2)}</strong><br>Material stretches this fraction of its length</div>`;
-                html += `<div class="result"><strong>Stretch = ${deformation.toFixed(3)} mm</strong><br>This is how much longer it gets</div>`;
+                html += `<div class="result"><strong>Normal Strain ε = ${strain.toExponential(2)}</strong><br>Material stretches this fraction of its length</div>`;
+                html += `<div class="result"><strong>Stretch δ = ${deformation.toFixed(3)} mm</strong><br>This is how much longer it gets</div>`;
+                
+                if (nu && nu > 0) {
+                    const lateralStrain = -nu * strain;
+                    html += `<div class="result"><strong>Lateral Strain = ${lateralStrain.toExponential(2)}</strong><br>Diameter changes by this amount (ν = ${nu})</div>`;
+                }
             }
 
-            document.getElementById('stressResult').innerHTML = html;
-        }
-
-        // Download PDF
-        function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const notes = document.getElementById('lectureNotes').innerText;
-            doc.setFontSize(16);
-            doc.text("VOID STUDY HUB - Module 1: Simple Notes", 20, 20);
-            doc.setFontSize(11);
-            doc.text(doc.splitTextToSize(notes, 170), 20, 30);
-            doc.save("VOID_Module1_SimpleNotes.pdf");
-        }
-
-        // Module 1 Topics - Simplified
-        const structuresTopics = [
-            "1. What is Stress & Strain",
-            "2. Hooke's Law & Young's Modulus E",
-            "3. How to Calculate Stretch δ = FL/AE",
-            "4. Poisson's Ratio - Side Squeeze",
-            "5. Temperature Stress",
-            "6. Support Reactions & Equilibrium"
-        ];
-
-        function renderTopics() {
-            const saved = JSON.parse(localStorage.getItem('structures1') || '[]');
-            const list = document.getElementById('topicsList');
-            list.innerHTML = structuresTopics.map((topic, i) => `
-                <label class="topic-check ${saved.includes(i)? 'done' : ''}">
-                    <input type="checkbox" ${saved.includes(i)? 'checked' : ''} onchange="toggleTopic(${i})">
-                    <span>${topic}</span>
-                </label>
-            `).join('');
-            document.getElementById('topicsDone').textContent = saved.length;
-        }
-
-        function toggleTopic(index) {
-            let saved = JSON.parse(localStorage.getItem('structures1') || '[]');
-            if (saved.includes(index)) {
-                saved = saved.filter(i => i!== index);
-            } else {
-                saved.push(index);
+            if (G && G > 0) {
+                const G_MPa = G * 1000;
+                const shearStrain = stress / G_MPa;
+                html += `<div class="result"><strong>Shear Strain γ = ${shearStrain.toExponential(2)}</strong><br>Angular deformation from shear (G = ${G} GPa)</div>`;
             }
-            localStorage.setItem('structures1', JSON.stringify(saved));
-            renderTopics();
-        }
 
-        // Load on start
-        updateDisplay();
-        renderTopics();
-        document.getElementById('sessions').textContent = localStorage.getItem('sessions') || 0;
-    </script>
-</body>
-    </html>
+            if (fos && fos > 0) {
+                const safeStress = stress / fos;
+                html += `<div class="result"><strong>Safe Stress = ${safeStress.toFixed(2)} MPa</strong
