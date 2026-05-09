@@ -4,243 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VOID STUDY HUB | Structures I</title>
-    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0a0f'/><text y='70' x='50' text-anchor='middle' font-size='60' font-family='Space Grotesk' font-weight='700' fill='%230f0'>V</text></svg>">
-    
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-            background: #0a0a0f;
-            color: #fff;
-            padding: 20px;
-            min-height: 100vh;
-        }
-   .container { max-width: 700px; margin: 0 auto; }
-   .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 25px 20px;
-            background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
-            border-radius: 16px;
-            border: 1px solid #0f0;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
-        }
-        h1 { 
-            font-size: 28px; 
-            margin-bottom: 5px; 
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-        }
-   .sub { color: #0f0; font-size: 13px; font-weight: 700; }
-   .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-   .card {
-            background: #11111b;
-            border: 1px solid #2a2a3e;
-            border-radius: 12px;
-            padding: 20px;
-        }
-   .card h2 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-   .timer { text-align: center; }
-        #time { font-size: 48px; font-weight: 700; margin: 15px 0; color: #0f0; }
-   .btn {
-            background: #1e1e2e;
-            border: 1px solid #3a3a4e;
-            color: #fff;
-            padding: 10px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 700;
-            font-family: inherit;
-            transition: 0.2s;
-        }
-   .btn:hover { background: #0f0; color: #000; }
-   .btn-small { padding: 6px 12px; font-size: 12px; }
-   .input-group { margin-bottom: 12px; }
-   .input-group label {
-            display: block;
-            font-size: 12px;
-            color: #999;
-            margin-bottom: 4px;
-      }
-   .input, .textarea {
-            width: 100%;
-            background: #1e1e2e;
-            border: 1px solid #3a3a4e;
-            color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            font-family: inherit;
-      }
-   .textarea { min-height: 80px; resize: vertical; }
-   .resource {
-            background: #1a1a2a;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            font-size: 14px;
-            transition: 0.2s;
-        }
-   .resource:hover { background: #0f0; color: #000; }
-   .full { grid-column: 1 / -1; }
-   .topic-check {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #1a1a2a;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 8px;
-            font-size: 14px;
-       }
-   .topic-check input { accent-color: #0f0; width: 18px; height: 18px; }
-   .topic-check.done { opacity: 0.6; }
-   .formula {
-            background: #0d0d15;
-            border-left: 3px solid #0f0;
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-            font-family: monospace;
-            font-size: 13px;
-       }
-   .result {
-            background: #0d1f0d;
-            border: 1px solid #0f0;
-            padding: 12px;
-            border-radius: 8px;
-            margin-top: 12px;
-            font-size: 14px;
-      }
-   .result strong { color: #0f0; }
-   .note-content {
-            background: #0d0d15;
-            border: 1px solid #2a2a3e;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            line-height: 1.8;
-            color: #ddd;
-            max-height: 500px;
-            overflow-y: auto;
-     }
-   .note-content h3 { color: #0f0; margin: 18px 0 8px 0; font-size: 16px; }
-   .note-content h3:first-child { margin-top: 0; }
-   .note-content h4 { color: #0f0; margin: 12px 0 6px 0; font-size: 14px; }
-   .note-content ul { margin-left: 18px; margin-bottom: 12px; }
-   .note-content li { margin-bottom: 8px; }
-   .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            margin-top: 10px;
-   }
-   .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-   }
-   .simple-box {
-            background: #1a1a2a;
-            padding: 12px;
-            border-radius: 8px;
-            margin: 10px 0;
-            border: 1px solid #2a2a3e;
-   }
-   .example-box {
-            background: #0a1a0a;
-            border: 1px solid #0f0;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-   }
-   .example-box h5 {
-            color: #0f0;
-            margin-bottom: 10px;
-            font-size: 14px;
-   }
-   .graph-container {
-            background: #0d0d15;
-            border: 1px solid #2a2a3e;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 15px 0;
-            text-align: center;
-   }
-   .graph-container svg {
-            max-width: 100%;
-            height: auto;
-   }
-   .graph-label {
-            font-size: 12px;
-            color: #0f0;
-            margin: 10px 0;
-            text-align: left;
-   }
-   .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 25px 20px;
-            border-top: 1px solid #2a2a3e;
-            color: #666;
-            font-size: 12px;
-   }
-   .footer-logo {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 12px;
-            background: #0a0a0f;
-            border: 1px solid #0f0;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            font-weight: 700;
-            color: #0f0;
-            animation: pulse 2s ease-in-out infinite;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
-   }
-   @keyframes pulse {
-            0%, 100% { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); transform: scale(1); }
-            50% { box-shadow: 0 0 25px rgba(0, 255, 0, 0.6); transform: scale(1.05); }
-   }
-   .void-tag {
-            color: #0f0;
-            font-weight: 700;
-            letter-spacing: 2px;
-            margin: 8px 0;
-            text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
-   }
-   .contact-form {
-            max-width: 400px;
-            margin: 15px auto 0;
-   }
-        @media (max-width: 600px) {
-       .grid { grid-template-columns: 1fr; }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -274,7 +40,7 @@
                     <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <pattern id="grid" width="50" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 50 0 L 0 0 0 40" fill="none" stroke="#2a2a3e" stroke-width="0.5"/>
+                                <path d="M 50 0 L 0 0 40" fill="none" stroke="#2a2a3e" stroke-width="0.5"/>
                             </pattern>
                         </defs>
                         <rect width="600" height="400" fill="url(#grid)" />
@@ -312,294 +78,13 @@
                 </div>
             </div>
 
-            <!-- COMPLETE MODULE 1 NOTES -->
+            <!-- NOTES -->
             <div class="card full">
-                <h2>📖 Module 1: Complete Notes + Worked Examples</h2>
-                <div class="note-content" id="lectureNotes">
-                    <h3>1. DIRECT STRESS</h3>
-                    
-                    <h4>A. Stress</h4>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Direct stress is the internal resistance force offered by a material per unit area when external force is applied.
-                        <br><br>
-                        <strong>Formula:</strong> Stress = F / A
-                        <br>
-                        <strong>Units:</strong> N/mm² or N/m²
-                        <br>
-                        <strong>Denoted by:</strong> σ (sigma)
-                    </div>
-
-                    <h4>B. Strain</h4>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Strain is a measure of deformation of a material due to applied stress. It is the ratio of change in dimension to original dimension.
-                        <br><br>
-                        <strong>Formula:</strong> ε = ΔL / L
-                        <br>
-                        <strong>Denoted by:</strong> ε (epsilon)
-                        <br>
-                        <strong>Note:</strong> Strain has no unit. It is dimensionless.
-                    </div>
-
-                    <h3>2. Elastic Limit</h3>
-                    <div class="simple-box">
-                        The maximum value to which material returns to its original shape and size when load is withdrawn.
-                    </div>
-
-                    <h3>3. Hooke's Law</h3>
-                    <div class="simple-box">
-                        <strong>States:</strong> Within the proportional limit, stress is directly proportional to strain.
-                        <br><br>
-                        <strong>Therefore:</strong> σ ∝ ε → σ = Eε
-                        <br>
-                        <strong>E = Young's Modulus / Elastic Modulus</strong>
-                    </div>
-
-                    <h3>4. Young's Modulus (E) - Elastic Modulus</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Young Modulus is the measure of stiffness of a material. It defines the ratio of stress to strain within the elastic limit (region).
-                        <br><br>
-                        <strong>Formula:</strong> E = Stress / Strain = σ / ε = (F/A) / (ΔL/L)
-                        <br>
-                        <strong>Denoted by:</strong> E
-                        <br>
-                        <strong>Units:</strong> N/mm² or GPa
-                    </div>
-
-                    <h3>5. Modulus of Rigidity (G) - Shear Modulus</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Modulus of rigidity is the property of a material that measures its ability to resist shear deformation.
-                        <br><br>
-                        It is defined as the ratio of shear stress to shear strain within the elastic limit of material.
-                        <br><br>
-                        <strong>Formula:</strong> G = τ / γ
-                        <br>
-                        <strong>Where:</strong>
-                        <br>• G = Modulus of rigidity
-                        <br>• τ = Shear stress (force per unit area)
-                        <br>• γ = Shear strain (angular deformation)
-                        <br><br>
-                        <strong>Key Point:</strong> When a body is subjected to shear force it tends to change shape but volume remains the same.
-                        <br><br>
-                        <strong>High value of G</strong> means a material is more resistant to shear deformation.
-                    </div>
-
-                    <h3>6. Poisson's Ratio (ν)</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Poisson's ratio is the measure of lateral contraction (or expansion) of a material when it is stretched (or compressed) in one direction.
-                        <br><br>
-                        It is defined as the ratio of the lateral strain to longitudinal strain.
-                        <br><br>
-                        <strong>Formula:</strong> ν = - (Lateral Strain / Longitudinal Strain)
-                        <br><br>
-                        <strong>Where:</strong>
-                        <br>• Lateral Strain = Δd / d (Change in diameter per original diameter)
-                        <br>• Longitudinal Strain = ΔL / L (Change in length per original length)
-                        <br><br>
-                        <strong>Note:</strong> -ve shows that when length increases, diameter decreases.
-                    </div>
-
-                    <div class="example-box">
-                        <h5>Example 1: Poisson's Ratio Calculation</h5>
-                        If a steel load elongates by 0.1% in length and contracts by 0.3% in diameter:
-                        <br><br>
-                        <strong>Given:</strong>
-                        <br>Longitudinal strain = 0.1% = 0.001
-                        <br>Lateral strain = -0.3% = -0.003 (negative because contraction)
-                        <br><br>
-                        <strong>Solution:</strong>
-                        <br>ν = - (Lateral Strain / Longitudinal Strain)
-                        <br>ν = - (-0.003 / 0.001)
-                        <br>ν = 0.003 / 0.001 = 3
-                    </div>
-
-                    <h3>7. Types of Stresses</h3>
-                    <ul>
-                        <li><strong>1. Tensional Stress:</strong> Pulling apart</li>
-                        <li><strong>2. Compression Stress:</strong> Pushing together</li>
-                    </ul>
-
-                    <div class="example-box">
-                        <h5>Example 2: Steel Bar Elongation</h5>
-                        A steel load 1m long and 20mm by 20mm in cross section is subjected to a tensile force of 40kN. Determine the elongation of length if Modulus of elasticity is 200 N/mm².
-                        <br><br>
-                        <strong>Given:</strong>
-                        <br>L = 1m = 1000mm
-                        <br>Cross-section = 20mm × 20mm = 400mm²
-                        <br>F = 40kN = 40,000N
-                        <br>E = 200 N/mm²
-                        <br><br>
-                        <strong>Solution:</strong>
-                        <br>σ = F/A = 40000 / 400 = 100 N/mm²
-                        <br><br>
-                        ε = σ/E = 100 / 200 = 0.5
-                        <br><br>
-                        ε = ΔL/L
-                        <br>ΔL = L × ε = 1000 × 0.5 = 500mm
-                        <br><br>
-                        <strong>Answer: Elongation = 500mm</strong>
-                    </div>
-
-                    <div class="example-box">
-                        <h5>Example 3: Hollow Cylinder - CORRECTED</h5>
-                        A hollow cylinder 2m long has an outside diameter of 50mm and inside diameter of 30mm. If the cylinder is carrying a load of 25kN, find:
-                        <br>i) The stress in the cylinder
-                        <br>ii) The deformation if E = 100 N/mm²
-                        <br><br>
-                        <strong>Given:</strong>
-                        <br>L = 2m = 2000mm
-                        <br>D_o = 50mm, D_i = 30mm
-                        <br>F = 25kN = 25,000N
-                        <br>E = 100 N/mm²
-                        <br><br>
-                        <strong>Solution i) Stress:</strong>
-                        <br>Area = π/4 × (D_o² - D_i²)
-                        <br>A = π/4 × (50² - 30²)
-                        <br>A = π/4 × (2500 - 900)
-                        <br>A = π/4 × 1600 = 1256.64 mm²
-                        <br><br>
-                        σ = F/A = 25000 / 1256.64 = <strong>19.89 N/mm²</strong>
-                        <br><br>
-                        <strong>Solution ii) Deformation:</strong>
-                        <br>ε = σ/E = 19.89 / 100 = 0.1989
-                        <br><br>
-                        ΔL = L × ε = 2000 × 0.1989 = <strong>397.8 mm</strong>
-                        <br><br>
-                        <strong>Note:</strong> Hollow area formula: A = π(D_o² - D_i²)/4, NOT π(D_o - D_i)²/4
-                    </div>
-
-                    <h3>8. Principle of Superposition</h3>
-                    <div class="simple-box">
-                        <strong>States:</strong> In a linear system, the total response caused by several loads acting together is equal to the algebraic sum of the responses caused by each load acting separately.
-                        <br><br>
-                        <strong>Application:</strong> Sometimes a body is subjected to number of forces acting on its outer edges as well as at some other section along its length of the body.
-                        <br><br>
-                        <strong>How to use:</strong> Split the bar into individual sections. Consider each section separately. The resulting deformation of the body is equal to the algebraic sum of the deformation of the individual sections.
-                        <br><br>
-                        <strong>Formula:</strong> ΔL = FL/AE = (1/AE)[F₁L₁ + F₂L₂ + F₃L₃ + ...]
-                        <br><br>
-                        <strong>Where:</strong>
-                        <br>• F₁ = Force acting at section 1
-                        <br>• L₁ = Length of section 1
-                        <br>• F₂, L₂ = Corresponding values for section 2, and so on
-                    </div>
-
-                    <div class="example-box">
-                        <h5>Example 4: Stepped Bar with Multiple Forces - CORRECTED</h5>
-                        A steel bar of cross-section area 200mm² is loaded as shown. Find the total elongation. Take E = 200 kN/mm² = 200,000 N/mm²
-                        <br><br>
-                        <strong>Forces:</strong> 50kN ← A ——300mm—— B → 20kN ——500mm—— C → 30kN
-                        <br><br>
-                        <strong>Given:</strong>
-                        <br>A = 200 mm²
-                        <br>Section AB: L₁ = 300mm, Net force = 50 - 20 = 30kN (tension)
-                        <br>Section BC: L₂ = 500mm, Net force = 30kN (tension)
-                        <br>E = 200,000 N/mm²
-                        <br><br>
-                        <strong>Solution:</strong>
-                        <br>ΔL = (1/AE)[F₁L₁ + F₂L₂]
-                        <br>ΔL = (1/(200 × 200,000))[30,000 × 300 + 30,000 × 500]
-                        <br>ΔL = (1/40,000,000)[9,000,000 + 15,000,000]
-                        <br>ΔL = 24,000,000 / 40,000,000
-                        <br>ΔL = <strong>0.6 mm</strong>
-                        <br><br>
-                        <strong>Answer: Total elongation = 0.6mm</strong>
-                        <br><br>
-                        <strong>Note:</strong> Your notes had ΔL = 0.75mm. Check: E = 200 kN/mm² = 200,000 N/mm², not 20,000. 1 kN/mm² = 1000 N/mm².
-                    </div>
-
-                    <h3>9. Yield Strength</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Yield strength is the minimum stress at which material begins to deform plastically.
-                        <br><br>
-                        At yield stress, the material reaches its elastic limit. Any stress beyond this point subjects the material to plastic deformation.
-                    </div>
-
-                    <h3>10. Ultimate Stress</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Ultimate stress is the maximum stress a material can withstand before it begins to fail.
-                    </div>
-
-                    <h3>11. Fracture Stress</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Fracture stress is the breaking stress at which the material fails.
-                        <br><br>
-                        <strong>Formula:</strong> σ_u = F_max / A_o
-                        <br>
-                        <strong>Where:</strong>
-                        <br>• F_max = Maximum load applied before failure
-                        <br>• A_o = Original cross-section area of the material
-                    </div>
-
-                    <h3>12. Factor of Safety (F.O.S)</h3>
-                    <div class="simple-box">
-                        <strong>Why use it?</strong> Since materials may have hidden defects, loads or unexpected stresses may occur, engineers do not use full strength of materials. Instead they apply a Factor of Safety.
-                        <br><br>
-                        <strong>Commonly ranged:</strong> 1.5 to 3 for metals, higher for brittle materials.
-                    </div>
-
-                    <h3>13. Permissible / Safe Stress</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Permissible stress is the maximum stress that a material is allowed to carry safely in design.
-                        <br><br>
-                        It is always less than the yield stress or ultimate stress.
-                        <br><br>
-                        <strong>Formula:</strong> Permissible Stress = Yield Stress (or Ultimate Stress) / Factor of Safety
-                    </div>
-
-                    <div class="example-box">
-                        <h5>Example 5: Safe Stress Calculation</h5>
-                        If yield stress of a material is 250 N/mm² and factor of safety is 2.5, determine safe stress.
-                        <br><br>
-                        <strong>Solution:</strong>
-                        <br>Safe Stress = Yield Stress / Factor of Safety
-                        <br>= 250 / 2.5
-                        <br>= 100 N/mm²
-                        <br><br>
-                        <strong>So in design, the steel will only be stressed up to 100 N/mm²</strong>
-                    </div>
-
-                    <h3>14. Working Stress</h3>
-                    <div class="simple-box">
-                        <strong>Definition:</strong> Working stress is the actual stress produced in the material under service load.
-                        <br><br>
-                        It is the stress a structural material experiences during normal operation and it is always less than or equal to permissible stress.
-                        <br><br>
-                        <strong>Formula:</strong> Working Stress = Load Applied / Cross-sectional Area (A_o)
-                        <br><br>
-                        <strong>Rule:</strong> Working Stress ≤ Safe Stress
-                    </div>
-
-                    <h3>15. How Much Does It Stretch? δ = FL/AE</h3>
-                    <div class="simple-box">
-                        <strong>Formula:</strong> Deformation δ = Force × Length / Area × E
-                        <br><br>
-                        <strong>Meaning:</strong> More force = more stretch. Longer bar = more stretch. 
-                        <br>Bigger area or stiffer material = less stretch.
-                    </div>
-
-                    <h3>16. Temperature Changes Cause Stress Too</h3>
-                    <div class="simple-box">
-                        <strong>If free to expand:</strong> δ = α × L × ΔT. No stress.
-                        <br>
-                        <strong>If blocked:</strong> Stress = E × α × ΔT
-                        <br>
-                        <strong>α:</strong> How much it expands per °C. Steel α = 12×10⁻⁶
-                    </div>
-
-                    <h3>17. Key Numbers to Remember</h3>
-                    <div class="simple-box">
-                        <strong>Steel:</strong> E = 200 GPa, G = 80 GPa, μ = 0.3, Yield = 250 MPa
-                        <br>
-                        <strong>Concrete:</strong> E = 25 GPa, μ = 0.2
-                        <br>
-                        <strong>Aluminum:</strong> E = 70 GPa, μ = 0.33
-                        <br>
-                        <strong>Note:</strong> 1 GPa = 1000 N/mm², 1 kN/mm² = 1000 N/mm²
-                    </div>
-                </div>
+                <h2>📖 Module 1: Complete Notes + Worked Examples + Diagrams</h2>
+                <div class="note-content" id="lectureNotes"></div>
             </div>
 
-            <!-- Embedded YouTube -->
+            <!-- YouTube -->
             <div class="card full">
                 <h2>▶️ Watch: Stress & Strain Made Simple</h2>
                 <div style="display:flex;gap:8px;margin-bottom:10px;">
@@ -612,7 +97,7 @@
                 <p style="font-size:12px;color:#999;margin-top:8px;" id="videoCredit">The Efficient Engineer - Understanding Stress</p>
             </div>
 
-            <!-- Calculator - UPDATED WITH SUPERPOSITION -->
+            <!-- CALCULATOR -->
             <div class="card full">
                 <h2>📐 Easy Calculator - Single & Multi-Section</h2>
                 <div class="input-group">
@@ -650,19 +135,89 @@
                 <button class="btn" onclick="calcStressStrain()">Calculate Single Section</button>
                 <div id="stressResult"></div>
                 
-                <h4 style="color:#0f0; margin-top:20px;">Multi-Section Calculator - Superposition</h4>
-                <div class="input-group">
-                    <label>Section 1: Force (N)</label>
-                    <input type="number" class="input" id="f1" placeholder="e.g. 30000">
+                <h4 style="color:#0f0; margin-top:20px;">Multi-Section Calculator - Superposition (Up to 5 Sections)</h4>
+                <div class="section-grid">
+                    <div class="input-group">
+                        <label>Section 1: Force (N)</label>
+                        <input type="number" class="input" id="f1" placeholder="e.g. 30000">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 1: Length (mm)</label>
+                        <input type="number" class="input" id="l1" placeholder="e.g. 300">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 2: Force (N)</label>
+                        <input type="number" class="input" id="f2" placeholder="e.g. 30000">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 2: Length (mm)</label>
+                        <input type="number" class="input" id="l2" placeholder="e.g. 500">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 3: Force (N)</label>
+                        <input type="number" class="input" id="f3" placeholder="e.g. 0">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 3: Length (mm)</label>
+                        <input type="number" class="input" id="l3" placeholder="e.g. 0">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 4: Force (N)</label>
+                        <input type="number" class="input" id="f4" placeholder="e.g. 0">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 4: Length (mm)</label>
+                        <input type="number" class="input" id="l4" placeholder="e.g. 0">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 5: Force (N)</label>
+                        <input type="number" class="input" id="f5" placeholder="e.g. 0">
+                    </div>
+                    <div class="input-group">
+                        <label>Section 5: Length (mm)</label>
+                        <input type="number" class="input" id="l5" placeholder="e.g. 0">
+                    </div>
                 </div>
                 <div class="input-group">
-                    <label>Section 1: Length (mm)</label>
-                    <input type="number" class="input" id="l1" placeholder="e.g. 300">
+                    <label>Cross-Section Area (mm²) - For superposition calc</label>
+                    <input type="number" class="input" id="superArea" placeholder="e.g. 200">
                 </div>
                 <div class="input-group">
-                    <label>Section 2: Force (N)</label>
-                    <input type="number" class="input" id="f2" placeholder="e.g. 30000">
+                    <label>E (GPa) - For superposition calc</label>
+                    <input type="number" class="input" id="superE" placeholder="e.g. 200">
                 </div>
-                <div class="input-group">
-                    <label>Section 2: Length (mm)</label>
-                    <input type="number" class
+                <button class="btn" onclick="calcSuperposition()">Calculate Total ΔL</button>
+                <div id="superResult"></div>
+            </div>
+
+            <!-- Checklist -->
+            <div class="card full">
+                <h2>✅ Master This First</h2>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>1. Stress = Force ÷ Area</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>2. Strain = Change in Length ÷ Original Length</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>3. Hooke's Law: σ = Eε</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>4. Young's Modulus E - Stiffness</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>5. Modulus of Rigidity G - Shear resistance</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>6. Poisson's Ratio ν - Lateral strain ratio</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>7. Hollow Cylinder Area = π(D_o² - D_i²)/4</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>8. Principle of Superposition</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>9. Yield Strength</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>10. Ultimate Stress</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>11. Fracture Stress</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>12. Factor of Safety</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>13. Permissible/Safe Stress</span></div>
+                <div class="topic-check"><input type="checkbox" onchange="updateProgress()"><span>14. Working Stress ≤ Safe Stress</span></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">V</div>
+            <div class="void-tag">VOID STUDY HUB</div>
+            <p style="margin:8px 0;">Engineering • Focus • Dominate</p>
+            <p style="margin:8px 0; color:#0f0;">Built for structure students who refuse to lose</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                    </html>
