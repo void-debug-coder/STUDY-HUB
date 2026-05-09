@@ -15,44 +15,50 @@
     <div class="container">
         <div class="category-header">📐 DIRECT STRESS & STRAIN</div>
 
-        <h3>1. Direct Stress</h3>
-        <div class="simple-box">
-            <strong>Definition:</strong> Force per unit area acting perpendicular to the cross-section
-            <br><strong>Formula:</strong> σ = P/A
-            <br><strong>Units:</strong> N/mm², MPa, kN/m², Pa
-            <br><br>
-            <strong>Types:</strong>
-            <br>1. <strong>Tensile Stress:</strong> Pulling force → Elongation → +σ
-            <br>2. <strong>Compressive Stress:</strong> Pushing force → Shortening → -σ
-        </div>
+        <div class="content-grid">
+            <div>
+                <h3>1. Direct Stress</h3>
+                <div class="simple-box">
+                    <strong>Definition:</strong> Force per unit area acting perpendicular to the cross-section
+                    <br><strong>Formula:</strong> σ = P/A
+                    <br><strong>Units:</strong> N/mm², MPa, kN/m², Pa
+                    <br><br>
+                    <strong>Types:</strong>
+                    <br>1. <strong>Tensile Stress:</strong> Pulling force → Elongation → +σ
+                    <br>2. <strong>Compressive Stress:</strong> Pushing force → Shortening → -σ
+                </div>
 
-        <div class="example-box">
-            <h5>Example 1: Simple Tensile Stress</h5>
-            A steel bar 50mm diameter carries an axial load of 100 kN. Find stress.
-            <br><br>
-            <strong>Solution:</strong>
-            <br>A = π×50²/4 = 1963.5 mm²
-            <br>σ = P/A = 100,000/1963.5 = <strong>50.93 N/mm² (Tensile)</strong>
-        </div>
+                <div class="example-box">
+                    <h5>Example 1: Simple Tensile Stress</h5>
+                    A steel bar 50mm diameter carries an axial load of 100 kN. Find stress.
+                    <br><br>
+                    <strong>Solution:</strong>
+                    <br>A = π×50²/4 = 1963.5 mm²
+                    <br>σ = P/A = 100,000/1963.5 = <strong>50.93 N/mm² (Tensile)</strong>
+                </div>
+            </div>
 
-        <h3>2. Direct Strain</h3>
-        <div class="simple-box">
-            <strong>Definition:</strong> Ratio of change in length to original length
-            <br><strong>Formula:</strong> ε = ΔL/L = δL/L
-            <br><strong>Units:</strong> Dimensionless, often expressed as % or με
-            <br><br>
-            <strong>Types:</strong>
-            <br>1. <strong>Tensile Strain:</strong> +ε (increase in length)
-            <br>2. <strong>Compressive Strain:</strong> -ε (decrease in length)
-        </div>
+            <div>
+                <h3>2. Direct Strain</h3>
+                <div class="simple-box">
+                    <strong>Definition:</strong> Ratio of change in length to original length
+                    <br><strong>Formula:</strong> ε = ΔL/L = δL/L
+                    <br><strong>Units:</strong> Dimensionless, often expressed as % or με
+                    <br><br>
+                    <strong>Types:</strong>
+                    <br>1. <strong>Tensile Strain:</strong> +ε (increase in length)
+                    <br>2. <strong>Compressive Strain:</strong> -ε (decrease in length)
+                </div>
 
-        <div class="example-box">
-            <h5>Example 2: Strain Calculation</h5>
-            A bar 2m long extends by 0.5mm under load. Find strain.
-            <br><br>
-            <strong>Solution:</strong>
-            <br>ε = ΔL/L = 0.5/2000 = 0.00025 = <strong>2.5×10⁻⁴</strong>
-            <br>ε = 0.025% = 250 με
+                <div class="example-box">
+                    <h5>Example 2: Strain Calculation</h5>
+                    A bar 2m long extends by 0.5mm under load. Find strain.
+                    <br><br>
+                    <strong>Solution:</strong>
+                    <br>ε = ΔL/L = 0.5/2000 = 0.00025 = <strong>2.5×10⁻⁴</strong>
+                    <br>ε = 0.025% = 250 με
+                </div>
+            </div>
         </div>
 
         <h3>3. Hooke's Law & Young's Modulus</h3>
@@ -142,7 +148,7 @@
         <div class="example-box">
             <h5>Example 6: Max Temperature Rise - Brass Rod</h5>
             A brass rod 20m long is fixed at both ends. If thermal stress is not to exceed 76.5 N/mm², calculate the temperature through which the bar should be heated. Take α = 17×10⁻⁶ /°C, E = 90 kN/mm²
-                        <br><br>
+            <br><br>
             <strong>Solution:</strong>
             <br>For fixed bar: σ = E×α×ΔT
             <br>76.5 = 90,000 × 17×10⁻⁶ × ΔT
@@ -196,21 +202,21 @@
 
         <div class="diagram">
             <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
-                <text x="300" y="15" fill="#0f0" font-size="13" text-anchor="middle" font-weight="bold">Composite Bar Behavior</text>
-                <text x="100" y="35" fill="#999" font-size="11" text-anchor="middle">(i) Before Heating</text>
-                <rect x="60" y="50" width="30" height="80" fill="none" stroke="#0f0" stroke-width="2"/>
-                <text x="75" y="145" fill="#0f0" font-size="10">Steel</text>
-                <rect x="90" y="50" width="30" height="80" fill="none" stroke="#ff0" stroke-width="2"/>
-                <text x="105" y="145" fill="#ff0" font-size="10">Brass</text>
-                <text x="300" y="35" fill="#999" font-size="11" text-anchor="middle">(ii) If Free</text>
-                <rect x="260" y="50" width="30" height="90" fill="none" stroke="#0f0" stroke-width="2"/>
-                <rect x="300" y="50" width="30" height="100" fill="none" stroke="#ff0" stroke-width="2"/>
-                <text x="300" y="165" fill="#f00" font-size="10" text-anchor="middle">Brass expands more</text>
-                <text x="500" y="35" fill="#999" font-size="11" text-anchor="middle">(iii) Bonded</text>
-                <rect x="460" y="50" width="30" height="95" fill="none" stroke="#0f0" stroke-width="2"/>
-                <rect x="490" y="50" width="30" height="95" fill="none" stroke="#ff0" stroke-width="2"/>
-                <text x="475" y="20" fill="#f00" font-size="10">Tension</text>
-                <text x="505" y="20" fill="#0ff" font-size="10">Comp</text>
+                <text x="300" y="15" fill="#c7d2fe" font-size="13" text-anchor="middle" font-weight="bold">Composite Bar Behavior</text>
+                <text x="100" y="35" fill="#94a3b8" font-size="11" text-anchor="middle">(i) Before Heating</text>
+                <rect x="60" y="50" width="30" height="80" fill="none" stroke="#6366f1" stroke-width="2"/>
+                <text x="75" y="145" fill="#6366f1" font-size="10">Steel</text>
+                <rect x="90" y="50" width="30" height="80" fill="none" stroke="#a855f7" stroke-width="2"/>
+                <text x="105" y="145" fill="#a855f7" font-size="10">Brass</text>
+                <text x="300" y="35" fill="#94a3b8" font-size="11" text-anchor="middle">(ii) If Free</text>
+                <rect x="260" y="50" width="30" height="90" fill="none" stroke="#6366f1" stroke-width="2"/>
+                <rect x="300" y="50" width="30" height="100" fill="none" stroke="#a855f7" stroke-width="2"/>
+                <text x="300" y="165" fill="#ef4444" font-size="10" text-anchor="middle">Brass expands more</text>
+                <text x="500" y="35" fill="#94a3b8" font-size="11" text-anchor="middle">(iii) Bonded</text>
+                <rect x="460" y="50" width="30" height="95" fill="none" stroke="#6366f1" stroke-width="2"/>
+                <rect x="490" y="50" width="30" height="95" fill="none" stroke="#a855f7" stroke-width="2"/>
+                <text x="475" y="20" fill="#ef4444" font-size="10">Tension</text>
+                <text x="505" y="20" fill="#06b6d4" font-size="10">Comp</text>
             </svg>
         </div>
 
@@ -354,7 +360,7 @@
             </tr>
         </table>
 
-        <h4 style="color:#0f0; margin-top:20px;">Universal Calculator</h4>
+        <h4 style="color:#a5b4fc; margin-top:20px;">Universal Calculator</h4>
         <select class="input" id="calcCase" onchange="updateCalc()" style="margin-bottom:10px;">
             <option value="direct">1. Direct Stress/Strain</option>
             <option value="restrained">2. Thermal - Fully Restrained</option>
@@ -386,7 +392,7 @@
             
             <div class="contact-form">
                 <h4>Contact MR VOID</h4>
-                <form action="mailto:voidtech003@gmail.com" method="post" enctype="text/plain">
+                <form id="contactForm">
                     <div class="form-group">
                         <label>Your Name:</label>
                         <input type="text" class="input" name="name" required>
@@ -399,7 +405,8 @@
                         <label>Message:</label>
                         <textarea class="input" name="message" placeholder="Got questions? Found an error? Need more examples?" required></textarea>
                     </div>
-                    <button type="submit" class="btn">Send to MR VOID</button>
+                    <button type="submit" class="btn">Send Message</button>
+                    <div id="contactSuccess">Message sent! MR VOID will get back to you soon.</div>
                 </form>
             </div>
 
@@ -412,4 +419,4 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
