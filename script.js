@@ -1,8 +1,13 @@
-function updateThermalCalc() {
-    const type = document.getElementById('thermalCase').value;
+function updateCalc() {
+    const type = document.getElementById('calcCase').value;
     let html = '<div class="section-grid">';
     
-    if (type === 'restrained') {
+    if (type === 'direct') {
+        html += `<div class="input-group"><label>P (N)</label><input type="number" class="input" id="p" value="50000"></div>
+                 <div class="input-group"><label>A (mm²)</label><input type="number" class="input" id="a" value="1000"></div>
+                 <div class="input-group"><label>L (mm)</label><input type="number" class="input" id="l" value="2000"></div>
+                 <div class="input-group"><label>E (GPa)</label><input type="number" class="input" id="e" value="200"></div>`;
+    } else if (type === 'restrained') {
         html += `<div class="input-group"><label>A (mm²)</label><input type="number" class="input" id="tA" value="1000"></div>
                  <div class="input-group"><label>E (GPa)</label><input type="number" class="input" id="tE" value="200"></div>
                  <div class="input-group"><label>α (×10⁻⁶)</label><input type="number" class="input" id="tAlpha" value="12"></div>
@@ -44,14 +49,26 @@ function updateThermalCalc() {
                  <div class="input-group"><label>ΔT (°F)</label><input type="number" class="input" id="tDT" value="200"></div>`;
     }
     html += '</div>';
-    document.getElementById('thermalCalcInputs').innerHTML = html;
+    document.getElementById('calcInputs').innerHTML = html;
 }
 
-function calcThermalUniversal() {
-    const type = document.getElementById('thermalCase').value;
+function calculate() {
+    const type = document.getElementById('calcCase').value;
     let html = '<div class="result">';
     
-    if (type === 'restrained') {
+    if (type === 'direct') {
+        const P = parseFloat(document.getElementById('p').value);
+        const A = parseFloat(document.getElementById('a').value);
+        const L = parseFloat(document.getElementById('l').value);
+        const E = parseFloat(document.getElementById('e').value) * 1000;
+        const sigma = P / A;
+        const epsilon = sigma / E;
+        const deltaL = epsilon * L;
+        html += `<strong>Stress σ:</strong> ${sigma.toFixed(2)} N/mm²<br>`;
+        html += `<strong>Strain ε:</strong> ${epsilon.toExponential(3)}<br>`;
+        html += `<strong>Elongation ΔL:</strong> ${deltaL.toFixed(3)} mm`;
+        
+    } else if (type === 'restrained') {
         const A = parseFloat(document.getElementById('tA').value);
         const E = parseFloat(document.getElementById('tE').value) * 1000;
         const alpha = parseFloat(document.getElementById('tAlpha').value) * 1e-6;
@@ -87,8 +104,7 @@ function calcThermalUniversal() {
         const sigma2 = P / A2;
         html += `<strong>Thermal Force P:</strong> ${P.toFixed(0)} N<br>`;
         html += `<strong>σ₁:</strong> ${sigma1.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-        html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-        html += `<strong>Rule:</strong> Smaller area has higher stress`;
+        html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}`;
         
     } else if (type === 'composite') {
         const A1 = parseFloat(document.getElementById('tA1').value);
@@ -143,10 +159,9 @@ function calcThermalUniversal() {
     }
     
     html += '</div>';
-    document.getElementById('thermalCalcResult').innerHTML = html;
+    document.getElementById('calcResult').innerHTML = html;
 }
 
-// Initialize on load
 document.addEventListener('DOMContentLoaded', function() {
-    updateThermalCalc();
+    updateCalc();
 });
