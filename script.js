@@ -163,33 +163,10 @@ function calculate() {
     document.getElementById('calcResult').innerHTML = html;
 }
 
+// Init calculator on page load
 document.addEventListener('DOMContentLoaded', function() {
     updateCalc();
 });
-// Contact form - no email redirect, just JS
-document.addEventListener('DOMContentLoaded', function() {
-    updateCalc();
-    
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Here you could send to a backend, but for now just show success
-            console.log('Form submitted:', data);
-            
-            // Show success message
-            document.getElementById('contactSuccess').style.display = 'block';
-            contactForm.reset();
-            
-            // Hide after 4 seconds
-            setTimeout(() => {
-                document.getElementById('contactSuccess').style.display = 'none';
-            }, 4000);
-        });
-    }
-});
+
+// NOTE: Contact form is handled by Formspree via the script tags in index.html
+// No JS needed here - Formspree @formspree/ajax handles everything
