@@ -147,4 +147,6 @@ function calcThermalUniversal() {
 }
 
 // Initialize on load
-updateThermalCalc();
+document.addEventListener('DOMContentLoaded', function() {
+    updateThermalCalc();
+});
