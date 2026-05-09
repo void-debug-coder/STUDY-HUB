@@ -166,3 +166,30 @@ function calculate() {
 document.addEventListener('DOMContentLoaded', function() {
     updateCalc();
 });
+// Contact form - no email redirect, just JS
+document.addEventListener('DOMContentLoaded', function() {
+    updateCalc();
+    
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you could send to a backend, but for now just show success
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            document.getElementById('contactSuccess').style.display = 'block';
+            contactForm.reset();
+            
+            // Hide after 4 seconds
+            setTimeout(() => {
+                document.getElementById('contactSuccess').style.display = 'none';
+            }, 4000);
+        });
+    }
+});
