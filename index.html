@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID STUDY HUB - Thermal Stress Module</title>
+    <title>VOID STUDY HUB - Thermal Stress Module Complete</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -151,6 +151,20 @@
             <strong>If same P:</strong> ΔL = (P/E)(L₁/A₁ + L₂/A₂ + ...)
         </div>
 
+        <div class="example-box">
+            <h5>Example 23: Stepped Bar</h5>
+            A bar has section AB: L₁ = 500mm, A₁ = 1000mm² and BC: L₂ = 800mm, A₂ = 500mm². 
+            <br>Carries axial load P = 50 kN. E = 200 GPa. Find total elongation.
+            <br><br>
+            <strong>Solution:</strong>
+            <br>σ₁ = P/A₁ = 50,000/1000 = 50 N/mm²
+            <br>σ₂ = P/A₂ = 50,000/500 = 100 N/mm²
+            <br><br>
+            ΔL = σ₁L₁/E + σ₂L₂/E
+            <br>ΔL = (50×500)/200,000 + (100×800)/200,000
+            <br>ΔL = 0.125 + 0.4 = <strong>0.525 mm</strong>
+        </div>
+
         <h3>16. Thermal Stress - Basic Cases</h3>
         <div class="simple-box">
             <strong>Case 1: Free Expansion</strong>
@@ -166,25 +180,100 @@
             <strong>α Values:</strong> Steel: 12×10⁻⁶, Brass: 19×10⁻⁶, Al: 24×10⁻⁶, Concrete: 10×10⁻⁶ /°C
         </div>
 
-        <h3>24. Stepped Bars Fixed Ends</h3>
-        <div class="simple-box">
-            <strong>Strain Compatibility:</strong> α×ΔT×ΣL = P/E × Σ(L_i/A_i)
-            <br><strong>Force:</strong> P = E×α×ΔT×ΣL / Σ(L_i/A_i)
-            <br><strong>Stresses:</strong> σ_i = P/A_i
-            <br><strong>Key:</strong> Smaller A → Higher σ
+        <div class="example-box">
+            <h5>Example 20: Aluminum Bar Fixed Ends</h5>
+            An aluminum bar fixed at both ends is heated through 20K. Find stress developed. 
+            <br>Take E = 80 GPa = 80,000 N/mm², α = 24×10⁻⁶ /K
+            <br><br>
+            <strong>Solution:</strong>
+            <br>Since fixed both ends, expansion prevented → Compressive stress
+            <br>σ = E×α×ΔT
+            <br>σ = 80,000 × 24×10⁻⁶ × 20
+            <br>σ = 80,000 × 0.00048
+            <br><strong>σ = 38.4 N/mm² (Compressive)</strong>
         </div>
 
-        <h3>27. Composite Bars - Different Materials</h3>
+        <div class="example-box">
+            <h5>Example 22: Max Temperature Rise - Brass Rod</h5>
+            A brass rod 20m long is fixed at both ends. If thermal stress is not to exceed 76.5 N/mm², calculate the temperature through which the bar should be heated. Take α = 17×10⁻⁶ /°C, E = 90 kN/mm²
+            <br><br>
+            <strong>Given:</strong>
+            <br>L = 20m = 20,000mm, σ_max = 76.5 N/mm²
+            <br>α = 17×10⁻⁶ /°C, E = 90,000 N/mm²
+            <br><br>
+            <strong>Solution:</strong>
+            <br>For fixed bar: σ = E×α×ΔT
+            <br>76.5 = 90,000 × 17×10⁻⁶ × ΔT
+            <br>76.5 = 1.53 × ΔT
+            <br><strong>ΔT = 50°C</strong>
+            <br><br>
+            <strong>Answer:</strong> Bar can be heated by 50°C maximum
+        </div>
+
+        <h3>24. Stepped Bars Fixed Ends</h3>
         <div class="simple-box">
+            <strong>Rule:</strong> For stepped bar fixed at both ends, thermal force P is constant throughout.
+            <br><br>
+            <strong>Strain Compatibility:</strong> Total free expansion = Total contraction by force P
+            <br>α×ΔT×(L₁+L₂+...) = P/E × (L₁/A₁ + L₂/A₂ + ...)
+            <br><br>
+            <strong>Solve for P:</strong> P = E×α×ΔT×(L₁+L₂) / (L₁/A₁ + L₂/A₂ + ...)
+            <br><br>
+            <strong>Then stresses:</strong> σ₁ = P/A₁, σ₂ = P/A₂, etc.
+            <br><strong>Key:</strong> Smaller area → Higher thermal stress
+        </div>
+
+        <div class="example-box">
+            <h5>Example 24: Stepped Steel Rod</h5>
+            Steel rod AB firmly held between rigid supports. A₁=400mm², L₁=500mm, A₂=600mm², L₂=200mm. Heated 15K. Find stress. α=12×10⁻⁶/°C, E=200 GPa
+            <br><br>
+            <strong>Solution:</strong>
+            <br><strong>Step 1: Free expansion</strong>
+            <br>ΔL_free = α×ΔT×(L₁+L₂) = 12×10⁻⁶×15×700 = 0.126mm
+            <br><br>
+            <strong>Step 2: Force P to prevent expansion</strong>
+            <br>0.126 = P/200,000 × (500/400 + 200/600)
+            <br>0.126 = P/200,000 × 1.5833
+            <br>P = 15,916 N
+            <br><br>
+            <strong>Step 3: Stresses</strong>
+            <br>σ₁ = 15,916/400 = <strong>39.8 N/mm² (Compressive)</strong>
+            <br>σ₂ = 15,916/600 = <strong>26.5 N/mm² (Compressive)</strong>
+        </div>
+
+        <h3>27. Thermal Stress in Composite Bars - Different Materials</h3>
+        <div class="simple-box">
+            <strong>Concept:</strong> Different materials have different α. When heated together, they want to expand different amounts but are forced to expand together.
+            <br><br>
+            <strong>Result:</strong> Material with higher α goes into COMPRESSION. Material with lower α goes into TENSION.
+            <br><br>
             <strong>Conditions:</strong>
-            <br>1. Strain: α₁ΔT + σ₁/E₁ = α₂ΔT + σ₂/E₂
-            <br>2. Force: A₁σ₁ + A₂σ₂ = 0 (or = P if external load)
+            <br>1. <strong>Strain Compatibility:</strong> Final strain same for both = α₁ΔT + σ₁/E₁ = α₂ΔT + σ₂/E₂
+            <br>2. <strong>Force Equilibrium:</strong> A₁σ₁ + A₂σ₂ = 0 (no external load)
             <br><br>
-            <strong>Formula (No load):</strong>
-            <br>σ₁ = E₁E₂A₂(α₂-α₁)ΔT / (A₁E₂+A₂E₁)
-            <br>σ₂ = -A₁σ₁/A₂
+            <strong>Solving:</strong> σ₁ = E₁E₂A₂(α₂-α₁)ΔT/(A₁E₂+A₂E₁)
+        </div>
+
+        <div class="example-box">
+            <h5>Example 25: Steel Core in Brass Tube</h5>
+            Steel rod A_s=500mm² inside brass tube A_b=1000mm², rigidly connected. 
+            <br>Heated 60°C. Find thermal stresses.
             <br><br>
-            <strong>Rule:</strong> Higher α material → Compression
+            <strong>Given:</strong>
+            <br>Steel: E_s=200GPa, α_s=12×10⁻⁶/°C
+            <br>Brass: E_b=100GPa, α_b=19×10⁻⁶/°C
+            <br>ΔT = 60°C
+            <br><br>
+            <strong>Solution:</strong>
+            <br>α_b > α_s, so brass wants to expand more → brass in compression, steel in tension
+            <br><br>
+            σ_s = E_s×E_b×A_b(α_b-α_s)ΔT / (A_s×E_b + A_b×E_s)
+            <br>σ_s = 200,000×100,000×1000×(19-12)×10⁻⁶×60 / (500×100,000 + 1000×200,000)
+            <br>σ_s = 8.4×10¹² / 250×10⁶ = <strong>33.6 N/mm² (Tension)</strong>
+            <br><br>
+            σ_b = -A_s×σ_s/A_b = -500×33.6/1000 = <strong>-16.8 N/mm² (Compression)</strong>
+            <br><br>
+            <strong>Check:</strong> 500×33.6 + 1000×(-16.8) = 16,800 - 16,800 = 0 ✓
         </div>
 
         <h3>32. Rod & Tube Composite</h3>
@@ -197,6 +286,32 @@
             <strong>Equations:</strong>
             <br>1. Force balance: A_rod×σ_rod + A_tube×σ_tube = 0
             <br>2. Strain: α_rod×ΔT + σ_rod/E_rod = α_tube×ΔT + σ_tube/E_tube
+        </div>
+
+        <div class="example-box">
+            <h5>Example 29: Gun Metal Rod in Steel Tube</h5>
+            Gun metal rod 20mm dia passes through steel tube 30mm OD, 25mm ID. 
+            <br>Nuts screwed tightly. Temp rises 200°F. Find stresses.
+            <br><br>
+            <strong>Given:</strong>
+            <br>A_gm = π×20²/4 = 314.16 mm², α_gm=10×10⁻⁶/°F, E_gm=100,000 N/mm²
+            <br>A_s = π/4×(30²-25²) = 215.98 mm², α_s=6×10⁻⁶/°F, E_s=200,000 N/mm²
+            <br>ΔT = 200°F
+            <br><br>
+            <strong>Solution:</strong>
+            <br><strong>1. Equilibrium:</strong> 314.16×σ_gm + 215.98×σ_s = 0
+            <br>∴ σ_s = -1.455×σ_gm
+            <br><br>
+            <strong>2. Compatibility:</strong>
+            <br>10×10⁻⁶×200 + σ_gm/100,000 = 6×10⁻⁶×200 + σ_s/200,000
+            <br>0.002 + σ_gm/100,000 = 0.0012 + σ_s/200,000
+            <br><br>
+            <strong>3. Solve:</strong> Sub σ_s = -1.455×σ_gm
+            <br>σ_gm[1/100,000 + 1.455/200,000] = -0.0008
+            <br>σ_gm = <strong>-46.3 N/mm² (Compression)</strong>
+            <br>σ_s = <strong>+67.4 N/mm² (Tension)</strong>
+            <br><br>
+            <strong>Check:</strong> 314.16×(-46.3) + 215.98×67.4 ≈ 0 ✓
         </div>
 
         <h3>33. Thermal + External Load Combined</h3>
@@ -266,40 +381,6 @@
         <button class="btn" onclick="calcThermalUniversal()">Calculate</button>
         <div id="thermalCalcResult"></div>
 
-        <h3>Complete Worked Examples</h3>
-        
-        <div class="example-box">
-            <h5>Example 1: Restrained Steel Bar</h5>
-            Steel bar 2m long, 50mm dia, rigidly held. Temp increases 50°C. E=200GPa, α=12×10⁻⁶/°C
-            <br><br>
-            <strong>Solution:</strong>
-            <br>σ = E×α×ΔT = 200,000×12×10⁻⁶×50 = <strong>120 N/mm² (Compression)</strong>
-            <br>F = A×σ = π×50²/4 × 120 = 235.6 kN
-        </div>
-
-        <div class="example-box">
-            <h5>Example 2: Stepped Bar</h5>
-            A₁=400mm², L₁=500mm, A₂=600mm², L₂=200mm. E=200GPa, α=12×10⁻⁶, ΔT=15°C
-            <br><br>
-            <strong>Solution:</strong>
-            <br>P = 200,000×12×10⁻⁶×15×700/(500/400+200/600) = 15,916 N
-            <br>σ₁ = 15,916/400 = <strong>39.8 N/mm² (Compression)</strong>
-            <br>σ₂ = 15,916/600 = <strong>26.5 N/mm² (Compression)</strong>
-        </div>
-
-        <div class="example-box">
-            <h5>Example 3: Gun Metal Rod in Steel Tube</h5>
-            Gun metal rod 20mm dia in steel tube 30mm OD, 25mm ID. ΔT=200°F.
-            <br>α_gm=10×10⁻⁶/°F, E_gm=100GPa, α_s=6×10⁻⁶/°F, E_s=200GPa
-            <br><br>
-            <strong>Solution:</strong>
-            <br>A_gm = 314.16mm², A_s = 215.98mm²
-            <br>σ_gm = 100,000×200,000×215.98×(6-10)×10⁻⁶×200/(314.16×200,000+215.98×100,000)
-            <br>σ_gm = <strong>-46.3 N/mm² (Compression)</strong>
-            <br>σ_s = <strong>+67.4 N/mm² (Tension)</strong>
-            <br><strong>Check:</strong> 314.16×(-46.3) + 215.98×67.4 ≈ 0 ✓
-        </div>
-
         <div class="simple-box">
             <strong>Exam Tips:</strong>
             <br>1. Always check units: E in N/mm² or GPa, α in /°C or /°F
@@ -310,156 +391,6 @@
         </div>
     </div>
 
-    <script>
-        function updateThermalCalc() {
-            const type = document.getElementById('thermalCase').value;
-            let html = '<div class="section-grid">';
-            
-            if (type === 'restrained') {
-                html += `<div class="input-group"><label>A (mm²)</label><input type="number" class="input" id="tA" value="1000"></div>
-                         <div class="input-group"><label>E (GPa)</label><input type="number" class="input" id="tE" value="200"></div>
-                         <div class="input-group"><label>α (×10⁻⁶)</label><input type="number" class="input" id="tAlpha" value="12"></div>
-                         <div class="input-group"><label>ΔT (°C)</label><input type="number" class="input" id="tDT" value="50"></div>`;
-            } else if (type === 'yielding') {
-                html += `<div class="input-group"><label>A (mm²)</label><input type="number" class="input" id="tA" value="1000"></div>
-                         <div class="input-group"><label>L (mm)</label><input type="number" class="input" id="tL" value="2000"></div>
-                         <div class="input-group"><label>E (GPa)</label><input type="number" class="input" id="tE" value="200"></div>
-                         <div class="input-group"><label>α (×10⁻⁶)</label><input type="number" class="input" id="tAlpha" value="12"></div>
-                         <div class="input-group"><label>ΔT (°C)</label><input type="number" class="input" id="tDT" value="50"></div>
-                         <div class="input-group"><label>Yield Δ (mm)</label><input type="number" class="input" id="tDelta" value="0.5"></div>`;
-            } else if (type === 'stepped') {
-                html += `<div class="input-group"><label>A₁ (mm²)</label><input type="number" class="input" id="tA1" value="400"></div>
-                         <div class="input-group"><label>L₁ (mm)</label><input type="number" class="input" id="tL1" value="500"></div>
-                         <div class="input-group"><label>A₂ (mm²)</label><input type="number" class="input" id="tA2" value="600"></div>
-                         <div class="input-group"><label>L₂ (mm)</label><input type="number" class="input" id="tL2" value="200"></div>
-                         <div class="input-group"><label>E (GPa)</label><input type="number" class="input" id="tE" value="200"></div>
-                         <div class="input-group"><label>α (×10⁻⁶)</label><input type="number" class="input" id="tAlpha" value="12"></div>
-                         <div class="input-group"><label>ΔT (°C)</label><input type="number" class="input" id="tDT" value="15"></div>`;
-            } else if (type === 'composite' || type === 'withLoad') {
-                html += `<div class="input-group"><label>Material 1: A₁ (mm²)</label><input type="number" class="input" id="tA1" value="500"></div>
-                         <div class="input-group"><label>E₁ (GPa)</label><input type="number" class="input" id="tE1" value="200"></div>
-                         <div class="input-group"><label>α₁ (×10⁻⁶)</label><input type="number" class="input" id="tAlpha1" value="12"></div>
-                         <div class="input-group"><label>Material 2: A₂ (mm²)</label><input type="number" class="input" id="tA2" value="1000"></div>
-                         <div class="input-group"><label>E₂ (GPa)</label><input type="number" class="input" id="tE2" value="100"></div>
-                         <div class="input-group"><label>α₂ (×10⁻⁶)</label><input type="number" class="input" id="tAlpha2" value="19"></div>
-                         <div class="input-group"><label>ΔT (°C)</label><input type="number" class="input" id="tDT" value="60"></div>`;
-                if (type === 'withLoad') {
-                    html += `<div class="input-group"><label>External Load P (N)</label><input type="number" class="input" id="tP" value="50000"></div>`;
-                }
-            } else if (type === 'rodTube') {
-                html += `<div class="input-group"><label>Rod Dia (mm)</label><input type="number" class="input" id="tRodD" value="20"></div>
-                         <div class="input-group"><label>E_rod (GPa)</label><input type="number" class="input" id="tRodE" value="100"></div>
-                         <div class="input-group"><label>α_rod (×10⁻⁶)</label><input type="number" class="input" id="tRodAlpha" value="10"></div>
-                         <div class="input-group"><label>Tube OD (mm)</label><input type="number" class="input" id="tTubeOD" value="30"></div>
-                         <div class="input-group"><label>Tube ID (mm)</label><input type="number" class="input" id="tTubeID" value="25"></div>
-                         <div class="input-group"><label>E_tube (GPa)</label><input type="number" class="input" id="tTubeE" value="200"></div>
-                         <div class="input-group"><label>α_tube (×10⁻⁶)</label><input type="number" class="input" id="tTubeAlpha" value="6"></div>
-                         <div class="input-group"><label>ΔT (°F)</label><input type="number" class="input" id="tDT" value="200"></div>`;
-            }
-            html += '</div>';
-            document.getElementById('thermalCalcInputs').innerHTML = html;
-        }
-
-        function calcThermalUniversal() {
-            const type = document.getElementById('thermalCase').value;
-            let html = '<div class="result">';
-            
-            if (type === 'restrained') {
-                const A = parseFloat(document.getElementById('tA').value);
-                const E = parseFloat(document.getElementById('tE').value) * 1000;
-                const alpha = parseFloat(document.getElementById('tAlpha').value) * 1e-6;
-                const DT = parseFloat(document.getElementById('tDT').value);
-                const sigma = E * alpha * DT;
-                const F = A * sigma;
-                html += `<strong>Thermal Stress:</strong> ${sigma.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-                html += `<strong>Restraining Force:</strong> ${F.toFixed(0)} N = ${(F/1000).toFixed(2)} kN`;
-                
-            } else if (type === 'yielding') {
-                const A = parseFloat(document.getElementById('tA').value);
-                const L = parseFloat(document.getElementById('tL').value);
-                const E = parseFloat(document.getElementById('tE').value) * 1000;
-                const alpha = parseFloat(document.getElementById('tAlpha').value) * 1e-6;
-                const DT = parseFloat(document.getElementById('tDT').value);
-                const Delta = parseFloat(document.getElementById('tDelta').value);
-                const sigma = E * (alpha * DT - Delta / L);
-                const F = A * sigma;
-                html += `<strong>Stress:</strong> ${sigma.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-                html += `<strong>Force:</strong> ${F.toFixed(0)} N<br>`;
-                html += `<strong>Reduction:</strong> ${((1 - sigma/(E*alpha*DT))*100).toFixed(1)}% vs fixed`;
-                
-            } else if (type === 'stepped') {
-                const A1 = parseFloat(document.getElementById('tA1').value);
-                const L1 = parseFloat(document.getElementById('tL1').value);
-                const A2 = parseFloat(document.getElementById('tA2').value);
-                const L2 = parseFloat(document.getElementById('tL2').value);
-                const E = parseFloat(document.getElementById('tE').value) * 1000;
-                const alpha = parseFloat(document.getElementById('tAlpha').value) * 1e-6;
-                const DT = parseFloat(document.getElementById('tDT').value);
-                const P = E * alpha * DT * (L1 + L2) / (L1/A1 + L2/A2);
-                const sigma1 = P / A1;
-                const sigma2 = P / A2;
-                html += `<strong>Thermal Force P:</strong> ${P.toFixed(0)} N<br>`;
-                html += `<strong>σ₁:</strong> ${sigma1.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-                html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-                html += `<strong>Rule:</strong> Smaller area has higher stress`;
-                
-            } else if (type === 'composite') {
-                const A1 = parseFloat(document.getElementById('tA1').value);
-                const E1 = parseFloat(document.getElementById('tE1').value) * 1000;
-                const alpha1 = parseFloat(document.getElementById('tAlpha1').value) * 1e-6;
-                const A2 = parseFloat(document.getElementById('tA2').value);
-                const E2 = parseFloat(document.getElementById('tE2').value) * 1000;
-                const alpha2 = parseFloat(document.getElementById('tAlpha2').value) * 1e-6;
-                const DT = parseFloat(document.getElementById('tDT').value);
-                const denom = A1*E2 + A2*E1;
-                const sigma1 = E1*E2*A2*(alpha2 - alpha1)*DT / denom;
-                const sigma2 = -A1*sigma1/A2;
-                html += `<strong>σ₁:</strong> ${sigma1.toFixed(2)} N/mm² ${sigma1 > 0 ? '(Tension)' : '(Compression)'}<br>`;
-                html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${sigma2 > 0 ? '(Tension)' : '(Compression)'}<br>`;
-                html += `<strong>Check:</strong> ${(A1*sigma1 + A2*sigma2).toFixed(0)} ≈ 0 ✓`;
-                
-            } else if (type === 'withLoad') {
-                const A1 = parseFloat(document.getElementById('tA1').value);
-                const E1 = parseFloat(document.getElementById('tE1').value) * 1000;
-                const alpha1 = parseFloat(document.getElementById('tAlpha1').value) * 1e-6;
-                const A2 = parseFloat(document.getElementById('tA2').value);
-                const E2 = parseFloat(document.getElementById('tE2').value) * 1000;
-                const alpha2 = parseFloat(document.getElementById('tAlpha2').value) * 1e-6;
-                const DT = parseFloat(document.getElementById('tDT').value);
-                const P = parseFloat(document.getElementById('tP').value);
-                const denom = A1*E2 + A2*E1;
-                const sigma1 = (P*E1 + E1*E2*A2*(alpha2 - alpha1)*DT) / denom;
-                const sigma2 = (P*E2 + E1*E2*A1*(alpha1 - alpha2)*DT) / denom;
-                html += `<strong>σ₁:</strong> ${sigma1.toFixed(2)} N/mm² ${sigma1 > 0 ? '(Tension)' : '(Compression)'}<br>`;
-                html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${sigma2 > 0 ? '(Tension)' : '(Compression)'}<br>`;
-                html += `<strong>Check:</strong> ${(A1*sigma1 + A2*sigma2).toFixed(0)} N = ${P} N ✓`;
-                
-            } else if (type === 'rodTube') {
-                const D_rod = parseFloat(document.getElementById('tRodD').value);
-                const E_rod = parseFloat(document.getElementById('tRodE').value) * 1000;
-                const alpha_rod = parseFloat(document.getElementById('tRodAlpha').value) * 1e-6;
-                const OD = parseFloat(document.getElementById('tTubeOD').value);
-                const ID = parseFloat(document.getElementById('tTubeID').value);
-                const E_tube = parseFloat(document.getElementById('tTubeE').value) * 1000;
-                const alpha_tube = parseFloat(document.getElementById('tTubeAlpha').value) * 1e-6;
-                const DT = parseFloat(document.getElementById('tDT').value);
-                const A_rod = Math.PI * D_rod * D_rod / 4;
-                const A_tube = Math.PI * (OD*OD - ID*ID) / 4;
-                const denom = A_rod*E_tube + A_tube*E_rod;
-                const sigma_rod = E_rod*E_tube*A_tube*(alpha_tube - alpha_rod)*DT / denom;
-                const sigma_tube = -A_rod*sigma_rod/A_tube;
-                html += `<strong>Rod Area:</strong> ${A_rod.toFixed(2)} mm²<br>`;
-                html += `<strong>Tube Area:</strong> ${A_tube.toFixed(2)} mm²<br>`;
-                html += `<strong>σ_rod:</strong> ${sigma_rod.toFixed(2)} N/mm² ${sigma_rod > 0 ? '(Tension)' : '(Compression)'}<br>`;
-                html += `<strong>σ_tube:</strong> ${sigma_tube.toFixed(2)} N/mm² ${sigma_tube > 0 ? '(Tension)' : '(Compression)'}<br>`;
-                html += `<strong>Check:</strong> ${(A_rod*sigma_rod + A_tube*sigma_tube).toFixed(0)} ≈ 0 ✓`;
-            }
-            
-            html += '</div>';
-            document.getElementById('thermalCalcResult').innerHTML = html;
-        }
-
-        updateThermalCalc(); // Init on load
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
