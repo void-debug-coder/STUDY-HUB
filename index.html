@@ -3,40 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID STUDY HUB - SOM Complete</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Courier New', monospace; background: #000; color: #0f0; padding: 20px; line-height: 1.6; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .category-header { background: linear-gradient(90deg, #0f0, #0a0); color: #000; padding: 15px; font-size: 24px; font-weight: bold; margin: 30px 0 20px 0; border: 2px solid #0f0; text-transform: uppercase; }
-        h3 { color: #0f0; font-size: 20px; margin: 25px 0 15px 0; border-left: 4px solid #0f0; padding-left: 10px; }
-        h4 { color: #0f0; margin-top: 20px; font-size: 16px; }
-        h5 { color: #0f0; font-size: 14px; margin-bottom: 10px; }
-        .simple-box { background: #0a0a0a; border: 1px solid #0f0; padding: 15px; margin: 15px 0; border-radius: 5px; }
-        .example-box { background: #001100; border: 2px solid #0f0; padding: 20px; margin: 20px 0; border-radius: 5px; }
-        .diagram { background: #000; border: 1px solid #333; padding: 15px; margin: 15px 0; text-align: center; }
-        .diagram svg { max-width: 100%; height: auto; }
-        .section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 15px 0; }
-        .input-group { display: flex; flex-direction: column; }
-        .input-group label { color: #0f0; font-size: 12px; margin-bottom: 5px; }
-        .input { background: #000; border: 1px solid #0f0; color: #0f0; padding: 8px; font-family: 'Courier New', monospace; font-size: 14px; }
-        .input:focus { outline: none; border-color: #0f0; box-shadow: 0 0 10px #0f0; }
-        .btn { background: #0f0; color: #000; border: none; padding: 12px 30px; font-family: 'Courier New', monospace; font-size: 14px; font-weight: bold; cursor: pointer; margin: 10px 0; text-transform: uppercase; }
-        .btn:hover { background: #0a0; box-shadow: 0 0 15px #0f0; }
-        .result { background: #001100; border: 2px solid #0f0; padding: 15px; margin: 15px 0; font-size: 14px; line-height: 1.8; }
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        th, td { border: 1px solid #0f0; padding: 10px; text-align: left; }
-        th { background: #0f0; color: #000; }
-        .note-box { background: #110000; border: 2px solid #f00; padding: 15px; margin: 15px 0; }
-        .correction { background: #001a00; border: 2px solid #ff0; padding: 15px; margin: 15px 0; }
-        .formula-table { font-family: 'Courier New', monospace; font-size: 13px; }
-        .formula-table td { padding: 8px; }
-        code { background: #0a0a0a; padding: 2px 6px; border: 1px solid #333; }
-    </style>
+    <title>VOID STUDY HUB - Strength of Materials</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="site-header">
+        <h1>VOID STUDY HUB</h1>
+        <p>STRENGTH OF MATERIALS // THERMAL STRESS MODULE</p>
+    </div>
+
     <div class="container">
-        <div class="category-header">📐 DIRECT STRESS & STRAIN - FUNDAMENTALS</div>
+        <div class="category-header">📐 DIRECT STRESS & STRAIN</div>
 
         <h3>1. Direct Stress</h3>
         <div class="simple-box">
@@ -165,19 +142,15 @@
         <div class="example-box">
             <h5>Example 6: Max Temperature Rise - Brass Rod</h5>
             A brass rod 20m long is fixed at both ends. If thermal stress is not to exceed 76.5 N/mm², calculate the temperature through which the bar should be heated. Take α = 17×10⁻⁶ /°C, E = 90 kN/mm²
-            <br><br>
-            <strong>Given:</strong> L = 20m = 20,000mm, σ_max = 76.5 N/mm², α = 17×10⁻⁶ /°C, E = 90,000 N/mm²
-            <br><br>
+                        <br><br>
             <strong>Solution:</strong>
             <br>For fixed bar: σ = E×α×ΔT
             <br>76.5 = 90,000 × 17×10⁻⁶ × ΔT
             <br>76.5 = 1.53 × ΔT
             <br><strong>ΔT = 50°C</strong>
-            <br><br>
-            <strong>Answer:</strong> Bar can be heated by 50°C maximum
         </div>
 
-        <h3>7. Stepped Bars Fixed Ends - FROM YOUR NOTES</h3>
+        <h3>7. Stepped Bars Fixed Ends</h3>
         <div class="simple-box">
             <strong>Rule:</strong> For stepped bar fixed at both ends, thermal force P is constant throughout.
             <br><br>
@@ -185,13 +158,12 @@
             <br>α×ΔT×(L₁+L₂+...) = P/E × (L₁/A₁ + L₂/A₂ + ...)
             <br><br>
             <strong>Solve for P:</strong> P = E×α×ΔT×(L₁+L₂) / (L₁/A₁ + L₂/A₂ + ...)
-            <br><br>
-            <strong>Then stresses:</strong> σ₁ = P/A₁, σ₂ = P/A₂, etc.
+            <br><strong>Then stresses:</strong> σ_i = P/A_i
             <br><strong>Key:</strong> Smaller area → Higher thermal stress
         </div>
 
         <div class="example-box">
-            <h5>Example 7: Stepped Steel Rod - FROM YOUR NOTES</h5>
+            <h5>Example 7: Stepped Steel Rod</h5>
             Steel rod AB firmly held between rigid supports. A₁=400mm², L₁=500mm, A₂=600mm², L₂=200mm. Heated 15K. Find stress. α=12×10⁻⁶/°C, E=200 GPa
             <br><br>
             <strong>Solution:</strong>
@@ -208,27 +180,23 @@
             <br>σ₂ = 15,916/600 = <strong>26.5 N/mm² (Compressive)</strong>
         </div>
 
-        <div class="correction">
-            <strong>CORRECTION TO YOUR NOTES:</strong>
-            <br>Your notes had σ = E×α×ΔT = 36 N/mm². This is WRONG for stepped bars.
-            <br>That formula only works for uniform cross-section. For stepped, you MUST use compatibility: P = E×α×ΔT×ΣL / Σ(L/A)
-        </div>
-
-        <h3>8. Thermal Stresses in Composite Bars - YOUR HANDWRITTEN NOTES</h3>
+        <h3>8. Thermal Stresses in Composite Bars</h3>
         <div class="simple-box">
-            <strong>FROM YOUR NOTES:</strong> Whenever there is some increase or decrease in temp of a bar consisting of two or more different materials it cause the bar to contract or expand.
+            <strong>Concept:</strong> When a bar consists of two or more different materials rigidly connected, temperature change causes different free expansions. Since they are bonded, they expand together.
             <br><br>
-            On account of different coefficients of linear expansion, the two materials do not expand or contract by the same amount but by different amounts.
+            <strong>Result:</strong> Material with higher α goes into COMPRESSION. Material with lower α goes into TENSION.
             <br><br>
-            <strong>Case 1:</strong> If both materials expand freely, no stress produced.
-            <br><strong>Case 2:</strong> If materials are rigidly fixed, composite expands as a whole by same amount.
+            <strong>Conditions:</strong>
+            <br>1. <strong>Strain Compatibility:</strong> Final strain same for both
+            <br>ε = α₁×ΔT + σ₁/E₁ = α₂×ΔT + σ₂/E₂
+            <br>2. <strong>Force Equilibrium:</strong> A₁σ₁ + A₂σ₂ = 0 (no external load)
             <br><br>
-            <strong>Result:</strong> Material with higher α gets COMPRESSED. Material with lower α gets TENSION.
+            <strong>Solution:</strong> σ₁ = E₁E₂A₂(α₂-α₁)ΔT/(A₁E₂+A₂E₁)
         </div>
 
         <div class="diagram">
             <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg">
-                <text x="300" y="15" fill="#0f0" font-size="13" text-anchor="middle" font-weight="bold">Composite Bar - YOUR DIAGRAMS</text>
+                <text x="300" y="15" fill="#0f0" font-size="13" text-anchor="middle" font-weight="bold">Composite Bar Behavior</text>
                 <text x="100" y="35" fill="#999" font-size="11" text-anchor="middle">(i) Before Heating</text>
                 <rect x="60" y="50" width="30" height="80" fill="none" stroke="#0f0" stroke-width="2"/>
                 <text x="75" y="145" fill="#0f0" font-size="10">Steel</text>
@@ -246,31 +214,8 @@
             </svg>
         </div>
 
-        <div class="simple-box">
-            <strong>Mathematical Derivation - FROM YOUR NOTES:</strong>
-            <br>A₁ = C.S.A of brass, A₂ = C.S.A of steel
-            <br>α₁, E₁ = α and E for brass, α₂, E₂ = for steel
-            <br><br>
-            <strong>Force Equilibrium:</strong> Compressive load on brass = Tensile force on steel
-            <br>σ₁×A₁ = σ₂×A₂  ✓
-            <br><br>
-            <strong>Strain Compatibility:</strong> Actual strain ε same for both
-            <br>ε = α₁×ΔT + σ₁/E₁ = α₂×ΔT + σ₂/E₂
-            <br><br>
-            <strong>Solving:</strong> σ₁ = E₁E₂A₂(α₂-α₁)ΔT/(A₁E₂+A₂E₁)
-            <br>σ₂ = -A₁σ₁/A₂
-        </div>
-
-        <div class="note-box">
-            <strong>YOUR NOTES ERROR:</strong> You wrote ε₁ + ε₂ = t(α₁ + α₂) ❌
-            <br><strong>CORRECTION:</strong> You EQUATE strains, not add them. ε₁ = ε₂
-            <br><br>
-            <strong>YOUR NOTES ERROR:</strong> "α₁, α₂ taken greater of the values" ❌
-            <br><strong>CORRECTION:</strong> Use (α₂ - α₁). Sign determines tension/compression.
-        </div>
-
         <div class="example-box">
-            <h5>Example 8: Steel Core in Brass Tube - FROM NOTES</h5>
+            <h5>Example 8: Steel Core in Brass Tube</h5>
             Steel rod A_s=500mm² inside brass tube A_b=1000mm², rigidly connected. Heated 60°C. Find thermal stresses.
             <br>Steel: E_s=200GPa, α_s=12×10⁻⁶/°C | Brass: E_b=100GPa, α_b=19×10⁻⁶/°C
             <br><br>
@@ -281,18 +226,17 @@
             <br><strong>Check:</strong> 500×33.6 + 1000×(-16.8) = 0 ✓
         </div>
 
-        <h3>9. 3-Layer Composite - YOUR NOTES CORRECTED</h3>
+        <h3>9. 3-Layer Composite Bar</h3>
         <div class="example-box">
-            <h5>Example 9: Steel-Al-Steel Sandwich - FROM YOUR NOTES</h5>
+            <h5>Example 9: Steel-Al-Steel Sandwich</h5>
             Flat steel bar 200×20×5mm placed between two Al bars 200×6×20mm. Fastened at room temp, heated 50°C. Find stresses.
             <br>E_s=200GPa, E_al=80GPa, α_s=12×10⁻⁶, α_al=24×10⁻⁶ /°C
             <br><br>
-            <strong>CORRECTED AREAS:</strong>
-            <br>A_s = 20×5 = 100 mm²  (Your notes had 160mm² - WRONG)
-            <br>A_al = 2×6×20 = 240 mm² ✓
-            <br><br>
             <strong>Solution:</strong>
-            <br><strong>1. Force equilibrium:</strong> σ_s×100 + σ_al×240 = 0 → σ_al = -0.417×σ_s
+            <br>A_s = 20×5 = 100 mm²
+            <br>A_al = 2×6×20 = 240 mm²
+            <br><br>
+            <strong>1. Force equilibrium:</strong> σ_s×100 + σ_al×240 = 0 → σ_al = -0.417×σ_s
             <br><br>
             <strong>2. Strain compatibility:</strong>
             <br>12×10⁻⁶×50 + σ_s/200,000 = 24×10⁻⁶×50 + σ_al/80,000
@@ -302,20 +246,11 @@
             <br>σ_s[1/200,000 + 0.417/80,000] = 0.0006
             <br>σ_s = <strong>+58.8 N/mm² (Tension)</strong>
             <br>σ_al = <strong>-24.5 N/mm² (Compression)</strong>
-            <br><br>
-            <strong>Check:</strong> 100×58.8 - 240×24.5 ≈ 0 ✓
         </div>
 
-        <div class="correction">
-            <strong>YOUR NOTES ERRORS:</strong>
-            <br>1. A_steel = 160mm² ❌ → Correct: 20×5=100mm²
-            <br>2. σ_s = 2.5×σ_al ❌ → Correct: σ_al = -A_s×σ_s/A_al = -0.417×σ_s
-            <br>3. Missing /E terms in strain equations ❌
-        </div>
-
-        <h3>10. Rod & Tube Composite - FROM YOUR NOTES</h3>
+        <h3>10. Rod & Tube Composite</h3>
         <div class="example-box">
-            <h5>Example 10: Gun Metal Rod in Steel Tube - FROM YOUR NOTES</h5>
+            <h5>Example 10: Gun Metal Rod in Steel Tube</h5>
             Gun metal rod 20mm dia passes through steel tube 30mm OD, 25mm ID. Nuts screwed tightly. Temp rises 200°F. Find stresses.
             <br><br>
             <strong>Given:</strong>
@@ -335,20 +270,12 @@
             <br>σ_gm[1/100,000 + 1.455/200,000] = -0.0008
             <br>σ_gm = <strong>-46.3 N/mm² (Compression)</strong>
             <br>σ_s = <strong>+67.4 N/mm² (Tension)</strong>
-            <br><br>
-            <strong>Check:</strong> 314.16×(-46.3) + 215.98×67.4 ≈ 0 ✓
         </div>
 
-        <div class="correction">
-            <strong>YOUR NOTES ERROR:</strong> You got σ_gm = 72.73, σ_s = 145.25 ❌
-            <br><strong>Reason:</strong> You used σ_s = 2×σ_g based on E ratio, but forgot area ratio.
-            <br><strong>Correct:</strong> σ_s/σ_gm = -A_gm/A_s = -1.455
-        </div>
-
-        <h3>11. Thermal + External Load Combined - MISSING CONCEPT</h3>
+        <h3>11. Thermal + External Load Combined</h3>
         <div class="simple-box">
             <strong>When composite carries load P + heated ΔT:</strong>
-            <br>A₁σ₁ + A₂σ₂ = P  (not 0!)
+            <br>A₁σ₁ + A₂σ₂ = P 
             <br>α₁ΔT + σ₁/E₁ = α₂ΔT + σ₂/E₂
             <br><br>
             <strong>Solution:</strong>
@@ -358,7 +285,7 @@
             <strong>Superposition:</strong> Total stress = Load stress + Thermal stress
         </div>
 
-        <h3>📊 MASTER FORMULA TABLE - ALL CASES</h3>
+        <h3>📊 MASTER FORMULA TABLE</h3>
         <table class="formula-table">
             <tr>
                 <th>Case</th>
@@ -442,7 +369,7 @@
         <div id="calcResult"></div>
 
         <div class="simple-box">
-            <strong>EXAM TIPS - FROM YOUR NOTES:</strong>
+            <strong>EXAM TIPS:</strong>
             <br>1. Always check units: E in N/mm² or GPa, α in /°C or /°F
             <br>2. Heating → Compression if restrained, Cooling → Tension
             <br>3. Higher α material → Compression in composites
@@ -451,6 +378,38 @@
             <br>6. Remember: α_brass > α_steel → brass in compression, steel in tension
         </div>
     </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-title">VOID STUDY HUB</div>
+            <div class="footer-subtitle">Crafted by MR VOID | Strength of Materials Simplified</div>
+            
+            <div class="contact-form">
+                <h4>Contact MR VOID</h4>
+                <form action="mailto:voidtech003@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Your Name:</label>
+                        <input type="text" class="input" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Email:</label>
+                        <input type="email" class="input" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message:</label>
+                        <textarea class="input" name="message" placeholder="Got questions? Found an error? Need more examples?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send to MR VOID</button>
+                </form>
+            </div>
+
+            <div class="credits">
+                <p>© 2026 VOID STUDY HUB | All formulas verified | Built for engineering students</p>
+                <p>Email: <a href="mailto:voidtech003@gmail.com">voidtech003@gmail.com</a> | Created by MR VOID</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
-    </html>
+</html>
