@@ -64,7 +64,7 @@ function calculate() {
         const sigma = P / A;
         const epsilon = sigma / E;
         const deltaL = epsilon * L;
-        html += `<strong>Stress σ:</strong> ${sigma.toFixed(2)} N/mm²<br>`;
+        html += `<strong>Stress σ:</strong> ${sigma.toFixed(2)} N/mm² ${sigma > 0 ? '(Tension)' : '(Compression)'}<br>`;
         html += `<strong>Strain ε:</strong> ${epsilon.toExponential(3)}<br>`;
         html += `<strong>Elongation ΔL:</strong> ${deltaL.toFixed(3)} mm`;
         
@@ -104,7 +104,8 @@ function calculate() {
         const sigma2 = P / A2;
         html += `<strong>Thermal Force P:</strong> ${P.toFixed(0)} N<br>`;
         html += `<strong>σ₁:</strong> ${sigma1.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
-        html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}`;
+        html += `<strong>σ₂:</strong> ${sigma2.toFixed(2)} N/mm² ${DT > 0 ? '(Compression)' : '(Tension)'}<br>`;
+        html += `<strong>Rule:</strong> Smaller area has higher stress`;
         
     } else if (type === 'composite') {
         const A1 = parseFloat(document.getElementById('tA1').value);
